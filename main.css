@@ -32,5 +32,24 @@ a:hover{
 }
 nav{ 
     position:relative;
-    background-color: #146bb5; 
+    background-color: #146bb5;
+}
+.carousel{
+    height:400px;
+    overflow:hidden;
+}
+.carousel-item img{
+    width:100%;
+    bottom: 0;
+}
+footer {
+    background-color: #146bb5;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+.title {
+    justify-content: center;
 }

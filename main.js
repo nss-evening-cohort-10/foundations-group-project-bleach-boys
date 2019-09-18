@@ -4,7 +4,8 @@ const slides = [
     slideAlt: '',
     heading: 'MUSIC',
     subHeader: 'Check out our albums.',
-    btnUrl: 'music.html'
+    btnUrl: 'music.html',
+    btnText: '',
     },
     { 
     slideUrl: './images/bleachBoys_slider2.jpg',
@@ -30,19 +31,20 @@ const printToDom = (divId, textToPrint) => {
 const slidePrinter = (slidesArr) => {
     let domString = ''
     for (let i = 0; i < slidesArr.length; i ++) {
-        const pet = slidesArr[i]
+        const slide = slidesArr[i]
         domString += `
         <div class="carousel-item">
-            <img src="${slidesArr.slideUrl}" alt="${slidesArr.slideAlt}">
-                <div class="carousel-caption d-none d-md-block">
-                <h5>${slidesArr.heading}</h5>
-                <p>...</p>
+            <img src="${slide.slideUrl}" alt="${slide.slideAlt}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>${slide.heading}</h5>
+                <p>${slide.subHeadr}</p>
+                <a href="${slide.btnUrl}" class="btn" role="button">${slide.heading}<a>
             </div>
       </div>       `   
     };
-    printToDom('carousel-inner', domString);
+    printToDom('homeCarousel', domString);
 };
-
+slidePrinter(slides);
 // if(indexOf(slidesArr)=== 0{
 //     innerHTML('active')
 // })
