@@ -35,4 +35,9 @@ a:hover{
 }
 nav{ 
     position:relative;
+    background-color: #146bb5;
+}
+
+.aboutTitle {
+    justify-content: center;
 }
