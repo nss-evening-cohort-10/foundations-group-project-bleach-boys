@@ -66,3 +66,12 @@ footer {
 .title {
     justify-content: center;
 }
+
+#gear-zone {    
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#merchCards {
+    background-color: lightblue;
+}
