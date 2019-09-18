@@ -36,3 +36,12 @@ a:hover{
 nav{ 
     position:relative;
 }
+
+#gear-zone {    
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#merchCards {
+    background-color: lightblue;
+}
