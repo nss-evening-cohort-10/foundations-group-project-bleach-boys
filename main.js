@@ -1,7 +1,7 @@
 console.log("main.js is linked");
 
 const printToDOM = (stringToPrint, divID) => {
-  document.getElementById(divID).innerHTML += stringToPrint;
+  document.getElementById(divID).innerHTML = stringToPrint;
 };
 
 const albums = [
@@ -112,7 +112,7 @@ const albums = [
 const albumCardPrinter = arr => {
   let htmlString = "";
   for (i = 0; i < arr.length; i++) {
-    htmlString = `<div class="card mb-3 album">
+    htmlString += `<div class="card mb-3 album">
       <div class="row no-gutters">
         <div class="col-md-6">
           <img src="${arr[i].coverUrl}" class="card-img" alt="${arr[i].title}">
@@ -137,8 +137,8 @@ const albumCardPrinter = arr => {
       </div>
      </div>
     `;
-    printToDOM(htmlString, "album-zone");
-  }
+    
+  } printToDOM(htmlString, "album-zone");
 };
 
 albumCardPrinter(albums);
