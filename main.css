@@ -35,6 +35,19 @@ a:hover{
 }
 nav{ 
     position:relative;
+    background-color: #146bb5;
+}
+
+footer {
+    background-color: #146bb5;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+.title {
+    justify-content: center;
 }
 
 #gear-zone {    
