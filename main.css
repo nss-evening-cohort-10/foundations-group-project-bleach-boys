@@ -35,7 +35,6 @@ a:hover{
 }
 nav{ 
     position:relative;
-<<<<<<< HEAD
 }
 
 #gear-zone {    
@@ -45,19 +44,4 @@ nav{
 
 #merchCards {
     background-color: lightblue;
-=======
-    background-color: #146bb5;
-}
-
-footer {
-    background-color: #146bb5;
-}
-
-.copyright {
-    color: #ffffff;
-    text-align: center;
-}
-.title {
-    justify-content: center;
->>>>>>> master
 }
