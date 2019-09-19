@@ -1,3 +1,9 @@
+//PrintToDom
+const printToDom = (textToPrint, divId) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint
+  };
+//Carousel Object Array
 const slides = [
     { 
     slideUrl: './images/bleachBoys_slider1.jpg',
@@ -24,19 +30,11 @@ const slides = [
     btnText: 'GEAR UP!'
     }
 ];
-
-const printToDom = (textToPrint, divId) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint
-  };
-
+//Loops through the Carousel Array
+//Creates each "carousel-item" 
+//Prints them to the "homeCarousel" div
+//Adds the "active" class to the first "carousel-item"
 const slidePrinter = (slidesArr) => {
-    const active = () => {
-        if(slidesArr[0]) {
-            document.innerHTML = 'active'
-        }else{
-            document.innerHTML = ''
-        }}
     let domString = ''
     for (let i = 0; i < slidesArr.length; i ++) {
         const slide = slidesArr[i];
@@ -55,7 +53,6 @@ const slidePrinter = (slidesArr) => {
     printToDom(domString, 'homeCarousel');
     document.getElementsByClassName("carousel-item")[0].className += " active";
 };
+//Print the Carousel
 slidePrinter(slides);
-// if(indexOf(slidesArr)=== 0{
-//     innerHTML('active')
-// })
+
