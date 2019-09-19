@@ -108,38 +108,38 @@ const albums = [
   },
 ];
 
-// const albumCardPrinter = arr => {
-//   let htmlString = "";
-//   for (i = 0; i < arr.length; i++) {
-//     htmlString += `<div class="card mb-3 album">
-//       <div class="row no-gutters">
-//         <div class="col-md-6">
-//           <img src="${arr[i].coverUrl}" class="card-img" alt="${arr[i].title}">
-//         </div>
-//         <div class="col-md-6">
-//           <div class="card-body">
-//             <a href="${arr[i].albumUrl}"><h5 class="card-title">${
-//       arr[i].title
-//     }</h5></a>
-//             <p class="card-text small">1.  ${arr[i].songs[0]} <br>
-//               2.  ${arr[i].songs[1]}<br>
-//               3.  ${arr[i].songs[2]}<br>
-//               4.  ${arr[i].songs[3]}<br>
-//               5.  ${arr[i].songs[4]}<br>
-//               6.  ${arr[i].songs[5]}<br>
-//               7.  ${arr[i].songs[6]}<br>
-//               8.  ${arr[i].songs[7]}<br>
-//               9.  ${arr[i].songs[8]}<br>
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//      </div>
-//     `    
-//   } printToDom(htmlString, "album-zone");
-// };
+const albumCardPrinter = arr => {
+  let htmlString = "";
+  for (i = 0; i < arr.length; i++) {
+    htmlString += `<div class="card mb-3 album">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <img src="${arr[i].coverUrl}" class="card-img" alt="${arr[i].title}">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <a href="${arr[i].albumUrl}"><h5 class="card-title">${
+      arr[i].title
+    }</h5></a>
+            <p class="card-text small">1.  ${arr[i].songs[0]} <br>
+              2.  ${arr[i].songs[1]}<br>
+              3.  ${arr[i].songs[2]}<br>
+              4.  ${arr[i].songs[3]}<br>
+              5.  ${arr[i].songs[4]}<br>
+              6.  ${arr[i].songs[5]}<br>
+              7.  ${arr[i].songs[6]}<br>
+              8.  ${arr[i].songs[7]}<br>
+              9.  ${arr[i].songs[8]}<br>
+            </p>
+          </div>
+        </div>
+      </div>
+     </div>
+    `    
+  } printToDom(htmlString, "album-zone");
+};
 
-// albumCardPrinter(albums);
+
 
 const gear = [
     {
@@ -223,5 +223,15 @@ const printGear = (gearArray) => {
     printToDom(stringToPrint, "gear-zone");
 }
 
-printGear(gear);
+const init = () => {
+    if (document.URL.includes("music")) {
+        albumCardPrinter(albums);
+    } else if (document.URL.includes("gear")) {
+        printGear(gear);
+    } else {
+        console.log("bruh");
+    }
+}
+
+init();
 
