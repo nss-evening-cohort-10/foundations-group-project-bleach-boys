@@ -1,48 +1,59 @@
 const slides = [
     { 
     slideUrl: './images/bleachBoys_slider1.jpg',
-    slideAlt: '',
-    heading: 'MUSIC',
+    slideAlt: 'Holy Water or Fire?',
+    heading: 'Music',
     subHeader: 'Check out our albums.',
-    btnUrl: 'music.html',
-    btnText: '',
+    btnUrl: './music.html',
+    btnText: 'LISTEN UP!'
     },
     { 
     slideUrl: './images/bleachBoys_slider2.jpg',
-    slideAlt: '',
-    heading: 'CONCERTS',
+    slideAlt: 'Why\'d the chicken cross the road? to go to the Bleach Boys Concert of course.',
+    heading: 'Concerts',
     subHeader: 'Come out and support us!',
-    btnUrl: 'concerts.html'
+    btnUrl: './concerts.html',
+    btnText: 'LISTEN IN!'
     },
     {
     slideUrl: './images/bleachBoys_slider3.jpg',
-    slideAlt: '',
-    heading: 'GEAR',
-    subHeader: 'Gear up!',
-    btnUrl: 'gear.html'
+    slideAlt: 'Dude. Dude. Dude. Dude.',
+    heading: 'Bleach Boy Gear',
+    subHeader: 'Finally cloths you love so much you\'ll never wash or take off.',
+    btnUrl: './gear.html',
+    btnText: 'GEAR UP!'
     }
 ];
 
-const printToDom = (divId, textToPrint) => {
+const printToDom = (textToPrint, divId) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint
   };
 
 const slidePrinter = (slidesArr) => {
+    const active = () => {
+        if(slidesArr[0]) {
+            document.innerHTML = 'active'
+        }else{
+            document.innerHTML = ''
+        }}
     let domString = ''
     for (let i = 0; i < slidesArr.length; i ++) {
-        const slide = slidesArr[i]
+        const slide = slidesArr[i];
         domString += `
         <div class="carousel-item">
             <img src="${slide.slideUrl}" alt="${slide.slideAlt}">
             <div class="carousel-caption d-none d-md-block">
-                <h5>${slide.heading}</h5>
-                <p>${slide.subHeadr}</p>
-                <a href="${slide.btnUrl}" class="btn" role="button">${slide.heading}<a>
+                <h1>${slide.heading}</h1>
+                <p>${slide.subHeader}</p>
+                <a class="btn btn-color" href="${slide.btnUrl}" role="button">&nbsp;&nbsp;&nbsp;${slide.btnText}&nbsp;&nbsp;&nbsp</a>
             </div>
-      </div>       `   
+      </div> 
+      `   
     };
-    printToDom('homeCarousel', domString);
+   
+    printToDom(domString, 'homeCarousel');
+    document.getElementsByClassName("carousel-item")[0].className += " active";
 };
 slidePrinter(slides);
 // if(indexOf(slidesArr)=== 0{
