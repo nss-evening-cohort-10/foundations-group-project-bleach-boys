@@ -338,7 +338,7 @@ const printConcerts = (concertArray) => {
 const init = () => {
     if (document.URL.includes("index")) {
         slidePrinter(slides);
-    } esle if (document.URL.includes("music")) {
+    } else if (document.URL.includes("music")) {
         albumCardPrinter(albums);
     } else if (document.URL.includes("gear")) {
         printGear(gear);
