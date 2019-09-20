@@ -337,7 +337,7 @@ const printConcerts = concertArray => {
   for (let i = 0; i < concertArray.length; i++) {
     const currentConcert = concertArray[i];
     string += `
-            <div class="card">
+            <div class="concert-card card">
                 <div class="card-body row">
                 <h5 class="card-title col-10 concert-listing">${currentConcert.location} | ${currentConcert.time}</h5>
                 <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>

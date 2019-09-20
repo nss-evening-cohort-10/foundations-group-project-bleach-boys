@@ -135,3 +135,7 @@ footer {
 .concert-listing {
     margin-top: .3em;
 }
+
+.concert-card {
+    background-color: #146bb5;
+}
