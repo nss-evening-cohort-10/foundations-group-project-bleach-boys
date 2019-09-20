@@ -1,4 +1,3 @@
-
 //PRINT TO DOM
 const printToDom = (message, divID) => {
   document.getElementById(divID).innerHTML = message;
@@ -7,8 +6,7 @@ const printToDom = (message, divID) => {
 //ALBUM OBJECT ARRAY
 const albums = [
   {
-    coverUrl:
-      "./images/Bleach_BOYS-01.png",
+    coverUrl: "./images/Bleach_BOYS-01.png",
     title: "Bleach Boys",
     songs: [
       "Spin Cycle",
@@ -24,8 +22,7 @@ const albums = [
     albumUrl: "bandcamp.com"
   },
   {
-    coverUrl:
-      "./images/Bleach_BOYS-02.png",
+    coverUrl: "./images/Bleach_BOYS-02.png",
     title: "Dirty Laundry",
     songs: [
       "Whites Cycle",
@@ -41,8 +38,7 @@ const albums = [
     albumUrl: "bandcamp.com"
   },
   {
-    coverUrl:
-      "./images/Bleach_BOYS-03.png",
+    coverUrl: "./images/Bleach_BOYS-03.png",
     title: "Sodium Hypochlorite",
     songs: [
       "Acid Washed",
@@ -58,8 +54,7 @@ const albums = [
     albumUrl: "bandcamp.com"
   },
   {
-    coverUrl:
-      "./images/Bleach_BOYS-04.png",
+    coverUrl: "./images/Bleach_BOYS-04.png",
     title: "Chlorine Dream",
     songs: [
       "Chlorine Dream",
@@ -75,8 +70,7 @@ const albums = [
     albumUrl: "bandcamp.com"
   },
   {
-    coverUrl:
-      "./images/Bleach_BOYS-06.png",
+    coverUrl: "./images/Bleach_BOYS-06.png",
     title: "Swimming In Bleach",
     songs: [
       "Bleach Breach",
@@ -92,8 +86,7 @@ const albums = [
     albumUrl: "bandcamp.com"
   },
   {
-    coverUrl:
-      "./images/Bleach_BOYS-05.png",
+    coverUrl: "./images/Bleach_BOYS-05.png",
     title: "Faded",
     songs: [
       "Sweet Sweet Bleach",
@@ -102,22 +95,22 @@ const albums = [
       "Wash Mosh",
       "Nightmares Of Color",
       "Who's Got The Clorox?",
-      "You'd Better B-leach It!",      
+      "You'd Better B-leach It!",
       "Bleach Your Brain",
       "Bleach On Down To Bleach Town"
     ],
     albumUrl: "bandcamp.com"
-  },
+  }
 ];
 
 // CREATE ALBUM CARD PRINTER
 const albumCardPrinter = arr => {
   let htmlString = "";
   for (i = 0; i < arr.length; i++) {
-    htmlString += `<div class="card mb-3 album">
+    htmlString += `<div class="albums-card mb-3 album">
       <div class="row no-gutters">
         <div class="col-md-6">
-          <img src="${arr[i].coverUrl}" class="card-img" alt="${arr[i].title}">
+          <img src="${arr[i].coverUrl}" class="albums-card-img card-img" alt="${arr[i].title}">
         </div>
         <div class="col-md-6">
           <div class="card-body">
@@ -138,44 +131,46 @@ const albumCardPrinter = arr => {
         </div>
       </div>
      </div>
-    `    
-  } printToDom(htmlString, "album-zone");
+    `;
+  }
+  printToDom(htmlString, "album-zone");
 };
 
 //CAROUSEL OBJECT ARRAY
 const slides = [
-    { 
-    slideUrl: './images/bleachBoys_slider1.jpg',
-    slideAlt: 'Holy Water or Fire?',
-    heading: 'Music',
-    subHeader: 'Check out our albums.',
-    btnUrl: './music.html',
-    btnText: 'LISTEN UP!'
-    },
-    { 
-    slideUrl: './images/bleachBoys_slider2.jpg',
-    slideAlt: 'Why\'d the chicken cross the road? to go to the Bleach Boys Concert of course.',
-    heading: 'Concerts',
-    subHeader: 'Come out and support us!',
-    btnUrl: './concerts.html',
-    btnText: 'LISTEN IN!'
-    },
-    {
-    slideUrl: './images/bleachBoys_slider3.jpg',
-    slideAlt: 'Dude. Dude. Dude. Dude.',
-    heading: 'Bleach Boy Gear',
-    subHeader: 'Finally cloths you love so much you\'ll never wash or take off.',
-    btnUrl: './gear.html',
-    btnText: 'GEAR UP!'
-    }
+  {
+    slideUrl: "./images/bleachBoys_slider1.jpg",
+    slideAlt: "Holy Water or Fire?",
+    heading: "Music",
+    subHeader: "Check out our albums.",
+    btnUrl: "./music.html",
+    btnText: "LISTEN UP!"
+  },
+  {
+    slideUrl: "./images/bleachBoys_slider2.jpg",
+    slideAlt:
+      "Why'd the chicken cross the road? to go to the Bleach Boys Concert of course.",
+    heading: "Concerts",
+    subHeader: "Come out and support us!",
+    btnUrl: "./concerts.html",
+    btnText: "LISTEN IN!"
+  },
+  {
+    slideUrl: "./images/bleachBoys_slider3.jpg",
+    slideAlt: "Dude. Dude. Dude. Dude.",
+    heading: "Bleach Boy Gear",
+    subHeader: "Finally cloths you love so much you'll never wash or take off.",
+    btnUrl: "./gear.html",
+    btnText: "GEAR UP!"
+  }
 ];
 
 //CAROUSEL BUILDER AND PRINTER
-const slidePrinter = (slidesArr) => {
-    let domString = ''
-    for (let i = 0; i < slidesArr.length; i ++) {
-        const slide = slidesArr[i];
-        domString += `
+const slidePrinter = slidesArr => {
+  let domString = "";
+  for (let i = 0; i < slidesArr.length; i++) {
+    const slide = slidesArr[i];
+    domString += `
         <div class="carousel-item">
             <img src="${slide.slideUrl}" alt="${slide.slideAlt}">
             <div class="carousel-caption d-none d-md-block">
@@ -184,79 +179,95 @@ const slidePrinter = (slidesArr) => {
                 <a class="btn btn-color" href="${slide.btnUrl}" role="button">&nbsp;&nbsp;&nbsp;${slide.btnText}&nbsp;&nbsp;&nbsp</a>
             </div>
       </div> 
-      `   
-    };
-   
-    printToDom(domString, 'homeCarousel');
-    document.getElementsByClassName("carousel-item")[0].className += " active";
+      `;
+  }
+
+  printToDom(domString, "homeCarousel");
+  document.getElementsByClassName("carousel-item")[0].className += " active";
 };
 
 //GEAR OBJECT ARRAY
 const gear = [
-    {
-        image: "https://image.spreadshirtmedia.com/image-server/v1/mp/products/T347A1MPA540PT17X22Y67D1008625786S65/views/1,width=378,height=378,appearanceId=1,backgroundColor=F2F2F2,modelId=2564,crop=list,version=1565757568,modelImageVersion=1551791379/bleach-womens-t-shirt.jpg",
-        price: "$19.99",
-        description: "100% preshrunk cotton. Fabric Weight: 5.0 oz. Product runs small. Double-stitched seams at shoulder, sleeve, collar and waist. This shirt is very durable and reliable.",
-        type: "shirt",
-        popular: true,
-    },
-    {
-        image: "https://res.cloudinary.com/teepublic/image/private/s--GxLq0lh8--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_-45/g_north_west,u_upload:v1462829018:production:blanks:ekerz3afkzxin2pgqj8h,x_-395,y_-370/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1458051453/production/designs/448547_1.jpg",
-        price: "$14.99",
-        description: "Music Band T-Shirt - are you looking for a cool 'music band' t-shirt? Then you've found it! The perfect shirt for saying 'how do you do fellow kids?' - you'll fit in perfectly with this Funny Music Band Shirt.",
-        type: "shirt",
-        popular: false,
-    },
-    {
-        image: "https://ih0.redbubble.net/image.278474159.9435/ra,unisex_tshirt,x2200,101010:01c5ca27c6,front-c,392,146,750,1000-bg,f8f8f8.u1.jpg",
-        price: "$19.99",
-        description: "Slim fit, but if that’s not your thing, order a size up. Solid color t-shirts are 100% cotton; heather grey is 90% cotton, 10% polyester; charcoal heather is 52% cotton, 48% polyester",
-        type: "shirt",
-        popular: false,
-    },
-    {
-        image: "https://s3.amazonaws.com/hatscolor/wp-content/uploads/2019/03/24124444/image-1-247x296.png",
-        price: "$24.99",
-        description: "100% cotton twill. 6 panel embroidered. Adjustable Hook and Loop closure. One size fits most.",
-        type: "Cap",
-        popular: true,
-    },
-    {
-        image: "https://media.customon.com/unsafe/600x600/img.customon.com/img/2314145/7909,42,0,1,62,303.2,178.61236363636,37.9,25.693818181818,1478194510-Clorox-Bleach-Pyrocinycal-Leafy/merchantimagenew/clorox-bleach-pyrocinycal-leafy-brushed-cotton-twill-hat-white.jpg",
-        description: "Fabric 100% cotton in front two panels; 100% polyester Spacer Mesh in mid and back panels. Closure 7-position adjustable snap.",
-        price: "14.99",
-        type: "cap",
-        popular: false,
-    },
-    {
-        image: "https://www.myanimeshoponline.com/wp-content/uploads/2018/09/bwallet-300x437.jpg",
-        price: "$14.99",
-        description: "100% genuine leather. Stylish black wallet that will make you much cooler than all the instructors in class.",
-        type: "misc",
-        popular: true,
-    },
-    {
-        image: "https://ih0.redbubble.net/image.454199651.7990/ssrco,mhoodie,womens,oatmeal_heather,front,tall_three_quarter,x1000-bg,f8f8f8.u2.jpg",
-        price: "$39.99",
-        description: "Heavyweight 9oz preshrunk cotton rich fleece made from 80% Cotton, 20% Polyester. Front pouch pocket, matching drawstring and rib cuffs. Ethically sourced following the World Responsible Apparel Practices Standards. Note: If you like your hoodies baggy go 2 sizes up.",
-        type: "shirt",
-        popular: false,
-    },
-    {
-        image: "https://media.customon.com/unsafe/600x600/img.customon.com/img/2313934/7909,13,0,0,62,168,98.967272727273,21,40.516363636364,1478194510-Clorox-Bleach-Pyrocinycal-Leafy/merchantimagenew/clorox-bleach-pyrocinycal-leafy-zip-up-hoodie-white.jpg",
-        price: "$49.99",
-        description: "Prepare to be astonished with the quality of our unisex zip-up hoodie. Comfortable, durable, and softer than other brand, this zip-up hoodie is a ringspun combed cotton and polyester combined. Ringspun combed cotton is no ordinary cotton which came from an extensive process of spinning, twisting, and thinning of the cotton strands.",
-        type: "jacket",
-        popular: false,
-    },
-]
+  {
+    image:
+      "https://image.spreadshirtmedia.com/image-server/v1/mp/products/T347A1MPA540PT17X22Y67D1008625786S65/views/1,width=378,height=378,appearanceId=1,backgroundColor=F2F2F2,modelId=2564,crop=list,version=1565757568,modelImageVersion=1551791379/bleach-womens-t-shirt.jpg",
+    price: "$19.99",
+    description:
+      "100% preshrunk cotton. Fabric Weight: 5.0 oz. Product runs small. Double-stitched seams at shoulder, sleeve, collar and waist. This shirt is very durable and reliable.",
+    type: "shirt",
+    popular: true
+  },
+  {
+    image:
+      "https://res.cloudinary.com/teepublic/image/private/s--GxLq0lh8--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_-45/g_north_west,u_upload:v1462829018:production:blanks:ekerz3afkzxin2pgqj8h,x_-395,y_-370/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1458051453/production/designs/448547_1.jpg",
+    price: "$14.99",
+    description:
+      "Music Band T-Shirt - are you looking for a cool 'music band' t-shirt? Then you've found it! The perfect shirt for saying 'how do you do fellow kids?' - you'll fit in perfectly with this Funny Music Band Shirt.",
+    type: "shirt",
+    popular: false
+  },
+  {
+    image:
+      "https://ih0.redbubble.net/image.278474159.9435/ra,unisex_tshirt,x2200,101010:01c5ca27c6,front-c,392,146,750,1000-bg,f8f8f8.u1.jpg",
+    price: "$19.99",
+    description:
+      "Slim fit, but if that’s not your thing, order a size up. Solid color t-shirts are 100% cotton; heather grey is 90% cotton, 10% polyester; charcoal heather is 52% cotton, 48% polyester",
+    type: "shirt",
+    popular: false
+  },
+  {
+    image:
+      "https://s3.amazonaws.com/hatscolor/wp-content/uploads/2019/03/24124444/image-1-247x296.png",
+    price: "$24.99",
+    description:
+      "100% cotton twill. 6 panel embroidered. Adjustable Hook and Loop closure. One size fits most.",
+    type: "Cap",
+    popular: true
+  },
+  {
+    image:
+      "https://media.customon.com/unsafe/600x600/img.customon.com/img/2314145/7909,42,0,1,62,303.2,178.61236363636,37.9,25.693818181818,1478194510-Clorox-Bleach-Pyrocinycal-Leafy/merchantimagenew/clorox-bleach-pyrocinycal-leafy-brushed-cotton-twill-hat-white.jpg",
+    description:
+      "Fabric 100% cotton in front two panels; 100% polyester Spacer Mesh in mid and back panels. Closure 7-position adjustable snap.",
+    price: "14.99",
+    type: "cap",
+    popular: false
+  },
+  {
+    image:
+      "https://www.myanimeshoponline.com/wp-content/uploads/2018/09/bwallet-300x437.jpg",
+    price: "$14.99",
+    description:
+      "100% genuine leather. Stylish black wallet that will make you much cooler than all the instructors in class.",
+    type: "misc",
+    popular: true
+  },
+  {
+    image:
+      "https://ih0.redbubble.net/image.454199651.7990/ssrco,mhoodie,womens,oatmeal_heather,front,tall_three_quarter,x1000-bg,f8f8f8.u2.jpg",
+    price: "$39.99",
+    description:
+      "Heavyweight 9oz preshrunk cotton rich fleece made from 80% Cotton, 20% Polyester. Front pouch pocket, matching drawstring and rib cuffs. Ethically sourced following the World Responsible Apparel Practices Standards. Note: If you like your hoodies baggy go 2 sizes up.",
+    type: "shirt",
+    popular: false
+  },
+  {
+    image:
+      "https://media.customon.com/unsafe/600x600/img.customon.com/img/2313934/7909,13,0,0,62,168,98.967272727273,21,40.516363636364,1478194510-Clorox-Bleach-Pyrocinycal-Leafy/merchantimagenew/clorox-bleach-pyrocinycal-leafy-zip-up-hoodie-white.jpg",
+    price: "$49.99",
+    description:
+      "Prepare to be astonished with the quality of our unisex zip-up hoodie. Comfortable, durable, and softer than other brand, this zip-up hoodie is a ringspun combed cotton and polyester combined. Ringspun combed cotton is no ordinary cotton which came from an extensive process of spinning, twisting, and thinning of the cotton strands.",
+    type: "jacket",
+    popular: false
+  }
+];
 
 // GEAR CARD PRINTER
-const printGear = (gearArray) => { 
-    let stringToPrint = '';
-    for (let i = 0; i < gearArray.length; i++) {
-        const merch = gearArray[i]
-        stringToPrint += `
+const printGear = gearArray => {
+  let stringToPrint = "";
+  for (let i = 0; i < gearArray.length; i++) {
+    const merch = gearArray[i];
+    stringToPrint += `
         <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
           <div class="row no-gutters">
             <div class="col-md-4">
@@ -270,56 +281,61 @@ const printGear = (gearArray) => {
             </div>
           </div>
         </div>
-        `        
-    } 
-    printToDom(stringToPrint, "gear-zone");
-}
+        `;
+  }
+  printToDom(stringToPrint, "gear-zone");
+};
 
 //CONCERT OBJECT ARRAY
 const concertDates = [
-    {
-        location: 'Royal Albert Hall, London',
-        time: '13th October 6:37 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/albert-hall-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Royal+Albert+Hall/@51.5009088,-0.1795547,17z/data=!3m1!4b1!4m5!3m4!1s0x4876055b21867ad1:0x5efe9cee35da2fd9!8m2!3d51.5009088!4d-0.177366'
-    },
-    {
-        location: 'Level III, Swindon',
-        time: '14th October 7:38 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/level-iii-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065'
-    },
-    {
-        location: 'Sydney Opera House, Sydney',
-        time: '15th October 9:21 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/sydney-opera-house-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Sydney+Opera+House/@-33.8567844,151.213108,17z/data=!3m2!4b1!5s0x6b12ae67d234a27f:0xd6d4e9380ca1e32f!4m5!3m4!1s0x6b12ae665e892fdd:0x3133f8d75a1ac251!8m2!3d-33.8567844!4d151.2152967'
-    },
-    {
-        location: 'Bridgestone Arena, Nashville',
-        time: '16th October 8:14 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/bridgestone-arena-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Bridgestone+Arena/@36.1591736,-86.7806846,17z/data=!3m1!4b1!4m5!3m4!1s0x8864665ec38d6447:0xa900537ecd3f6612!8m2!3d36.1591736!4d-86.7784959'
-    },
-    {
-        location: 'The Basement East, Nashville',
-        time: '17th October 10:28 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/basement-east-map.png',
-        mapUrl: 'https://www.google.com/maps/place/The+Basement+East/@36.175686,-86.7577787,17z/data=!3m1!4b1!4m5!3m4!1s0x886466334bb7caed:0x7d32d7f9cf5cac87!8m2!3d36.175686!4d-86.75559'
-    }
-]
+  {
+    location: "Royal Albert Hall, London",
+    time: "13th October 6:37 pm",
+    ticketUrl: "ticketmaster.com",
+    imgUrl: "./images/albert-hall-map.png",
+    mapUrl:
+      "https://www.google.com/maps/place/Royal+Albert+Hall/@51.5009088,-0.1795547,17z/data=!3m1!4b1!4m5!3m4!1s0x4876055b21867ad1:0x5efe9cee35da2fd9!8m2!3d51.5009088!4d-0.177366"
+  },
+  {
+    location: "Level III, Swindon",
+    time: "14th October 7:38 pm",
+    ticketUrl: "ticketmaster.com",
+    imgUrl: "./images/level-iii-map.png",
+    mapUrl:
+      "https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065"
+  },
+  {
+    location: "Sydney Opera House, Sydney",
+    time: "15th October 9:21 pm",
+    ticketUrl: "ticketmaster.com",
+    imgUrl: "./images/sydney-opera-house-map.png",
+    mapUrl:
+      "https://www.google.com/maps/place/Sydney+Opera+House/@-33.8567844,151.213108,17z/data=!3m2!4b1!5s0x6b12ae67d234a27f:0xd6d4e9380ca1e32f!4m5!3m4!1s0x6b12ae665e892fdd:0x3133f8d75a1ac251!8m2!3d-33.8567844!4d151.2152967"
+  },
+  {
+    location: "Bridgestone Arena, Nashville",
+    time: "16th October 8:14 pm",
+    ticketUrl: "ticketmaster.com",
+    imgUrl: "./images/bridgestone-arena-map.png",
+    mapUrl:
+      "https://www.google.com/maps/place/Bridgestone+Arena/@36.1591736,-86.7806846,17z/data=!3m1!4b1!4m5!3m4!1s0x8864665ec38d6447:0xa900537ecd3f6612!8m2!3d36.1591736!4d-86.7784959"
+  },
+  {
+    location: "The Basement East, Nashville",
+    time: "17th October 10:28 pm",
+    ticketUrl: "ticketmaster.com",
+    imgUrl: "./images/basement-east-map.png",
+    mapUrl:
+      "https://www.google.com/maps/place/The+Basement+East/@36.175686,-86.7577787,17z/data=!3m1!4b1!4m5!3m4!1s0x886466334bb7caed:0x7d32d7f9cf5cac87!8m2!3d36.175686!4d-86.75559"
+  }
+];
 
 //PRINTS CONCERTS TO CONCERTS PAGE
-const printConcerts = (concertArray) => {
-    let string = '';
-    for (let i = 0; i < concertArray.length; i++) {
-        const currentConcert = concertArray[i];
-        string += `
+const printConcerts = concertArray => {
+  let string = "";
+  for (let i = 0; i < concertArray.length; i++) {
+    const currentConcert = concertArray[i];
+    string += `
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">${currentConcert.location} | ${currentConcert.time}</h5>
@@ -328,27 +344,26 @@ const printConcerts = (concertArray) => {
                     <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
                 </a>
             </div>
-        `
-    }
-    console.log(string);
-    printToDom(string, 'concert-list');
-}
+        `;
+  }
+  console.log(string);
+  printToDom(string, "concert-list");
+};
 
 //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
 const init = () => {
-    if (document.URL.includes("index")) {
-        slidePrinter(slides);
-    } else if (document.URL.includes("music")) {
-        albumCardPrinter(albums);
-    } else if (document.URL.includes("gear")) {
-        printGear(gear);
-    } else if (document.URL.includes("concerts")){
-        printConcerts(concertDates);
-    } else {
-        console.log("bruh");
-    }
-}
+  if (document.URL.includes("index")) {
+    slidePrinter(slides);
+  } else if (document.URL.includes("music")) {
+    albumCardPrinter(albums);
+  } else if (document.URL.includes("gear")) {
+    printGear(gear);
+  } else if (document.URL.includes("concerts")) {
+    printConcerts(concertDates);
+  } else {
+    console.log("bruh");
+  }
+};
 
 //CALL INIT
 init();
-
