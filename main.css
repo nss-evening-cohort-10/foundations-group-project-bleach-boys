@@ -38,6 +38,20 @@ nav{
     background-color: #146bb5;
 }
 
-.text-center {
+footer {
+    background-color: #146bb5;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+.title-center {
     justify-content: center;
+}
+.bandCards {
+    display: flex;
+}
+.card {
+    margin: 10px;
 }
