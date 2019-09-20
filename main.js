@@ -21,7 +21,7 @@ const albums = [
       "Ode To Clorox",
       "Go Bleach Yourself"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -38,7 +38,7 @@ const albums = [
       "Eye Damage",
       "Blinded By The Bleach"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -55,7 +55,7 @@ const albums = [
       "Claude Louis Berthollet",
       "Eau De Javel"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -72,7 +72,7 @@ const albums = [
       "Thirsty For Bleach",
       "Esophagus Damage"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -89,7 +89,7 @@ const albums = [
       "Sitting On the Bleachers",
       "Shouldn't Drink Bleach But I Do"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -106,7 +106,7 @@ const albums = [
       "Bleach Your Brain",
       "Bleach On Down To Bleach Town"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
 ];
 
