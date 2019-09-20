@@ -20,6 +20,11 @@ const memberInfo = [
         name: "Jon"
     }
 ]
+const Jon = document.getElementById("JonInfo");
+const Phnuff = document.getElementById("PhnuffInfo");
+const Mark = document.getElementById("MarkInfo");
+const Rocket = document.getElementById("RocketInfo");
+const Matt = document.getElementById("MattInfo");
 
 const printToDom = (toPrint, divId) => {
     document.getElementById(divId).innerHTML = toPrint
@@ -46,37 +51,32 @@ const filter = (filteredMember) => {
     }));
 }
 
-const Matt = document.getElementById("MattInfo");
 
-Matt.addEventListener(`click`, function() {
-    clearScreen();
-    filter("Matt");
-} )
+const aboutEventListeners = () => {
+    Matt.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Matt");
+    } )
 
-const Rocket = document.getElementById("RocketInfo");
+    Rocket.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Rocket");
+    } )
 
-Rocket.addEventListener(`click`, function() {
-    clearScreen();
-    filter("Rocket");
-} )
+    Mark.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Mark");
+    } )
 
-const Mark = document.getElementById("MarkInfo");
+    Phnuff.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Phnuff");
+    } )
 
-Mark.addEventListener(`click`, function() {
-    clearScreen();
-    filter("Mark");
-} )
+    Jon.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Jon");
+    } )
+}
 
-const Phnuff = document.getElementById("PhnuffInfo");
-
-Phnuff.addEventListener(`click`, function() {
-    clearScreen();
-    filter("Phnuff");
-} )
-
-const Jon = document.getElementById("JonInfo");
-
-Jon.addEventListener(`click`, function() {
-    clearScreen();
-    filter("Jon");
-} )
+aboutEventListeners();
