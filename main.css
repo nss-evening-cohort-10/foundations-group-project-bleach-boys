@@ -95,6 +95,8 @@ footer {
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
+
+
 /*Gear Page*/
 #gear-zone {    
     display: flex;
