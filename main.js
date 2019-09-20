@@ -1,9 +1,148 @@
-//PrintToDom
-const printToDom = (textToPrint, divId) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint
-  };
-//Carousel Object Array
+
+//PRINT TO DOM
+const printToDom = (message, divID) => {
+  document.getElementById(divID).innerHTML = message;
+};
+
+//ALBUM OBJECT ARRAY
+const albums = [
+  {
+    coverUrl:
+      "./images/Bleach_BOYS-01.png",
+    title: "Bleach Boys",
+    songs: [
+      "Spin Cycle",
+      "Bleach Boys",
+      "Basic Bleach",
+      "Clean AF",
+      "Now We Bleachin'",
+      "Can't Breach the Bleach",
+      "Preach Bleach",
+      "Ode To Clorox",
+      "Go Bleach Yourself"
+    ],
+    albumUrl: "bandcamp.com"
+  },
+  {
+    coverUrl:
+      "./images/Bleach_BOYS-02.png",
+    title: "Dirty Laundry",
+    songs: [
+      "Whites Cycle",
+      "Mr. Clean",
+      "Drink Bleach",
+      "Antimicrobial",
+      "Reach for Bleach",
+      "To Each Their Bleach",
+      "Bleach In My Eyes",
+      "Eye Damage",
+      "Blinded By The Bleach"
+    ],
+    albumUrl: "bandcamp.com"
+  },
+  {
+    coverUrl:
+      "./images/Bleach_BOYS-03.png",
+    title: "Sodium Hypochlorite",
+    songs: [
+      "Acid Washed",
+      "Oxidize THIS!",
+      "All White Everything",
+      "Yes, We Drink Bleach",
+      "Bleach Blonde Baby",
+      "No Color",
+      "NaOCl",
+      "Claude Louis Berthollet",
+      "Eau De Javel"
+    ],
+    albumUrl: "bandcamp.com"
+  },
+  {
+    coverUrl:
+      "./images/Bleach_BOYS-04.png",
+    title: "Chlorine Dream",
+    songs: [
+      "Chlorine Dream",
+      "Let's Drink Bleach",
+      "Clean Your Pool",
+      "Color-Safe",
+      "The Custodian",
+      "Teach Bleach",
+      "Bleach Bath For Two",
+      "Thirsty For Bleach",
+      "Esophagus Damage"
+    ],
+    albumUrl: "bandcamp.com"
+  },
+  {
+    coverUrl:
+      "./images/Bleach_BOYS-06.png",
+    title: "Swimming In Bleach",
+    songs: [
+      "Bleach Breach",
+      "Leeches in the Bleaches",
+      "Rid Me Of Color",
+      "Squeaky Clean",
+      "Clorox Motherfucker",
+      "God the Bleach Tastes So Good",
+      "Bored Of Hue",
+      "Sitting On the Bleachers",
+      "Shouldn't Drink Bleach But I Do"
+    ],
+    albumUrl: "bandcamp.com"
+  },
+  {
+    coverUrl:
+      "./images/Bleach_BOYS-05.png",
+    title: "Faded",
+    songs: [
+      "Sweet Sweet Bleach",
+      "Are We Bleaching?",
+      "Stuck In the Cycle",
+      "Wash Mosh",
+      "Nightmares Of Color",
+      "Who's Got The Clorox?",
+      "You'd Better B-leach It!",      
+      "Bleach Your Brain",
+      "Bleach On Down To Bleach Town"
+    ],
+    albumUrl: "bandcamp.com"
+  },
+];
+
+// CREATE ALBUM CARD PRINTER
+const albumCardPrinter = arr => {
+  let htmlString = "";
+  for (i = 0; i < arr.length; i++) {
+    htmlString += `<div class="card mb-3 album">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <img src="${arr[i].coverUrl}" class="card-img" alt="${arr[i].title}">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <a href="${arr[i].albumUrl}"><h5 class="card-title">${
+      arr[i].title
+    }</h5></a>
+            <p class="card-text small">1.  ${arr[i].songs[0]} <br>
+              2.  ${arr[i].songs[1]}<br>
+              3.  ${arr[i].songs[2]}<br>
+              4.  ${arr[i].songs[3]}<br>
+              5.  ${arr[i].songs[4]}<br>
+              6.  ${arr[i].songs[5]}<br>
+              7.  ${arr[i].songs[6]}<br>
+              8.  ${arr[i].songs[7]}<br>
+              9.  ${arr[i].songs[8]}<br>
+            </p>
+          </div>
+        </div>
+      </div>
+     </div>
+    `    
+  } printToDom(htmlString, "album-zone");
+};
+
+//CAROUSEL OBJECT ARRAY
 const slides = [
     { 
     slideUrl: './images/bleachBoys_slider1.jpg',
@@ -30,10 +169,8 @@ const slides = [
     btnText: 'GEAR UP!'
     }
 ];
-//Loops through the Carousel Array
-//Creates each "carousel-item" 
-//Prints them to the "homeCarousel" div
-//Adds the "active" class to the first "carousel-item"
+
+//CAROUSEL BUILDER AND PRINTER
 const slidePrinter = (slidesArr) => {
     let domString = ''
     for (let i = 0; i < slidesArr.length; i ++) {
@@ -53,10 +190,8 @@ const slidePrinter = (slidesArr) => {
     printToDom(domString, 'homeCarousel');
     document.getElementsByClassName("carousel-item")[0].className += " active";
 };
-//Print the Carousel
-//slidePrinter(slides);
 
-
+//GEAR OBJECT ARRAY
 const gear = [
     {
         image: "https://image.spreadshirtmedia.com/image-server/v1/mp/products/T347A1MPA540PT17X22Y67D1008625786S65/views/1,width=378,height=378,appearanceId=1,backgroundColor=F2F2F2,modelId=2564,crop=list,version=1565757568,modelImageVersion=1551791379/bleach-womens-t-shirt.jpg",
@@ -116,6 +251,31 @@ const gear = [
     },
 ]
 
+// GEAR CARD PRINTER
+const printGear = (gearArray) => { 
+    let stringToPrint = '';
+    for (let i = 0; i < gearArray.length; i++) {
+        const merch = gearArray[i]
+        stringToPrint += `
+        <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="${merch.image}" class="card-img" id="imageCard" alt="image of ${merch.type}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">${merch.description}</p>
+                    <p class="card-text">${merch.price}</p>
+                </div>
+            </div>
+          </div>
+        </div>
+        `        
+    } 
+    printToDom(stringToPrint, "gear-zone");
+}
+
+//CONCERT OBJECT ARRAY
 const concertDates = [
     {
         location: 'Royal Albert Hall, London',
@@ -154,36 +314,8 @@ const concertDates = [
     }
 ]
 
-/*const printToDom = (message, divId) => {
-    //document.getElementById(divId).innerHTML = message
-}*/
 
-const printGear = (gearArray) => {
-    let stringToPrint = '';
-    for (let i = 0; i < gearArray.length; i++) {
-        const merch = gearArray[i]
-        stringToPrint += `
-        <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="${merch.image}" class="card-img" id="imageCard" alt="image of ${merch.type}">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <p class="card-text">${merch.description}</p>
-                    <p class="card-text">${merch.price}</p>
-                </div>
-            </div>
-          </div>
-        </div>
-        `
-    }
-    printToDom(stringToPrint, 'gear-zone')
-}
-
-printGear(gear); 
-
-
+//PRINTS CONCERTS TO CONCERTS PAGE
 const printConcerts = (concertArray) => {
     let string = '';
     for (let i = 0; i < concertArray.length; i++) {
@@ -203,5 +335,21 @@ const printConcerts = (concertArray) => {
     printToDom(string, 'concert-list');
 }
 
-printConcerts(concertDates);
+//PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
+const init = () => {
+    if (document.URL.includes("index")) {
+        slidePrinter(slides);
+    } else if (document.URL.includes("music")) {
+        albumCardPrinter(albums);
+    } else if (document.URL.includes("gear")) {
+        printGear(gear);
+    } else if (document.URL.includes("concerts")){
+        printConcerts(concertDates);
+    } else {
+        console.log("bruh");
+    }
+}
+
+//CALL INIT
+init();
 
