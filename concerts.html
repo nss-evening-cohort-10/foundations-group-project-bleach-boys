@@ -46,7 +46,7 @@
         <div id="concert-list" class="accordion">
 
             <div class="concert-card card">
-                <div class="card-body row">
+                <div class="card-body row" id="heading0">
                     <h5 class="card-title col-10 concert-listing" data-toggle="collapse" data-target="#collapse0" aria-expanded="true" aria-controls="collapse0">
                         
                             Royal Albert Hall, London | 13th October 6:37 pm
@@ -54,20 +54,24 @@
                     </h5>
                     <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
                 </div>
-                <div id="collapse0" class="collapse show" aria-labelledby="headingOne" data-parent="#concert-list">
+                <div id="collapse0" class="collapse show" aria-labelledby="heading0" data-parent="#concert-list">
                     <a href="https://maps.google.com">
                         <img src="https://user-images.githubusercontent.com/54124593/65100281-8f577380-d98d-11e9-953c-5d975e375bad.png" class="card-img-top" alt="Map of Albert Hall">
                     </a>
                 </div>
             </div>
             <div class="concert-card card">
-                <div class="card-body row">
-                <h5 class="card-title col-10 concert-listing">Level III, Swindon | 14th October 7:38 pm</h5>
+                <div class="card-body row" id="heading1">
+                <h5 class="card-title col-10 concert-listing collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                    Level III, Swindon | 14th October 7:38 pm
+                </h5>
                 <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
                 </div>
-                <a href="https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065">
-                    <img src="./images/level-iii-map.png" class="card-img-top" alt="Map of Level III, Swindon">
-                </a>
+                <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#concert-list">
+                    <a href="https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065">
+                        <img src="./images/level-iii-map.png" class="card-img-top" alt="Map of Level III, Swindon">
+                    </a>
+                </div>
             </div>
 
         </div>
