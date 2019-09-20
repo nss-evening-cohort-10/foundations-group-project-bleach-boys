@@ -347,12 +347,9 @@ const buttonClick = (e) => {
         const merch = gear[i]
         if (merch.type === name) {
             selectedGear.push(merch);
-
-        }   
-    }
-        printGear(selectedGear);   
-}    
-
+        }        
+    } printGear(selectedGear);
+} 
 
 //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
 const init = () => {
@@ -366,6 +363,7 @@ const init = () => {
         document.getElementById('misc').addEventListener('click', buttonClick)
         document.getElementById('All').addEventListener('click', buttonClick)
         printGear(gear);
+        printGear(selectedGear);
     } else if (document.URL.includes("concerts")){
         printConcerts(concertDates);
     } else {
