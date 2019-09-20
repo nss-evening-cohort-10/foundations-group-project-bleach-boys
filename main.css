@@ -55,3 +55,6 @@ footer {
 .card {
     margin: 10px;
 }
+.card-body > img {
+    width: 100%;
+}

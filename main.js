@@ -22,13 +22,14 @@ const memberInfo = [
 ]
 
 const printToDom = (toPrint, divId) => {
-    document.getElementById(divId).innerHTML += toPrint
+    document.getElementById(divId).innerHTML = toPrint
 }
 
 const bandMemberShow = (memberInfo) => {
+    let stringDom = "";
     for (let i = 0; i < memberInfo.length; i++) {
         const oneBandMember = memberInfo[i];
-        const stringDom = `
+        stringDom += `
             <div class="soloInfo jumbotron text-center">
                 <p>${oneBandMember.info}</p>
             </div>`
