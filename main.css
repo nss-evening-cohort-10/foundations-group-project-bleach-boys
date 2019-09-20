@@ -1,4 +1,76 @@
-  .album {
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+/*the basics*/
+body{ 
+    font-family: ‘Roboto’, sans-serif;
+}
+
+p{
+  font-weight:400;  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight:700;
+}
+/*Navbar*/
+a.nav-link{
+    color:#ffffff !important;
+}
+a.nav-link:hover{
+    color:#fad704!important;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+  }
+a {
+    color:#fad704 !important;
+}
+a:hover{
+    color:#ef3e24 !important;
+}
+nav{ 
+    position:relative;
+    background-color: #146bb5;
+}
+.btn-color{
+    background-color: #146bb5;
+}
+.btn-color:hover{
+    background-color:#fad704;
+}
+/*Carousel*/
+.carousel{
+    height:400px;
+    overflow:hidden;
+}
+.carousel-item img{
+    width:100%;
+    bottom: 0;
+}
+.carousel-caption {
+    top: 20%;
+}
+.carousel-caption > h1{
+    font-weight:400;
+}
+/*Footer*/
+footer {
+    background-color: #146bb5;
+}
+
+.copyright {
+    color: #ffffff;
+    text-align: center;
+}
+.title {
+    justify-content: center;
+}
+/*albums Page*/
+.album {
     width: 500px;
     border: 1.25px solid #ef3e24;
   }
@@ -23,50 +95,7 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight:700;
-}
-.navbar-default {
-    background-color: #146bb5; 
-}
-a.nav-link{
-    color:#ffffff !important;
-}
-a.nav-link:hover{
-    color:#fad704!important;
-}
-.navbar .navbar-collapse {
-    text-align: center;
-  }
-a {
-    color:#fad704 !important;
-}
-a:hover{
-    color:#ef3e24 !important;
-}
-nav{ 
-    position:relative;
-    background-color: #146bb5;
-}
-
-footer {
-    background-color: #146bb5;
-}
-
-.copyright {
-    color: #ffffff;
-    text-align: center;
-}
-.title {
-    justify-content: center;
-}
-
+/*Gear Page*/
 #gear-zone {    
     display: flex;
     flex-flow: row wrap;
@@ -75,7 +104,7 @@ footer {
 #merchCards {
     background-color: lightblue;
 }
-
+/*Concerts Page*/
 #concert-list {
     margin-bottom: 2em;
 }

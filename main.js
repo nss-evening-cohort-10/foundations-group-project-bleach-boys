@@ -1,11 +1,10 @@
-// Create printToDom function
 
+//PRINT TO DOM
 const printToDom = (message, divID) => {
   document.getElementById(divID).innerHTML = message;
 };
 
-// Define album data
-
+//ALBUM OBJECT ARRAY
 const albums = [
   {
     coverUrl:
@@ -111,8 +110,7 @@ const albums = [
   },
 ];
 
-// Create album card printer function
-
+// CREATE ALBUM CARD PRINTER
 const albumCardPrinter = arr => {
   let htmlString = "";
   for (i = 0; i < arr.length; i++) {
@@ -144,8 +142,56 @@ const albumCardPrinter = arr => {
   } printToDom(htmlString, "album-zone");
 };
 
-// Define gear data
+//CAROUSEL OBJECT ARRAY
+const slides = [
+    { 
+    slideUrl: './images/bleachBoys_slider1.jpg',
+    slideAlt: 'Holy Water or Fire?',
+    heading: 'Music',
+    subHeader: 'Check out our albums.',
+    btnUrl: './music.html',
+    btnText: 'LISTEN UP!'
+    },
+    { 
+    slideUrl: './images/bleachBoys_slider2.jpg',
+    slideAlt: 'Why\'d the chicken cross the road? to go to the Bleach Boys Concert of course.',
+    heading: 'Concerts',
+    subHeader: 'Come out and support us!',
+    btnUrl: './concerts.html',
+    btnText: 'LISTEN IN!'
+    },
+    {
+    slideUrl: './images/bleachBoys_slider3.jpg',
+    slideAlt: 'Dude. Dude. Dude. Dude.',
+    heading: 'Bleach Boy Gear',
+    subHeader: 'Finally cloths you love so much you\'ll never wash or take off.',
+    btnUrl: './gear.html',
+    btnText: 'GEAR UP!'
+    }
+];
 
+//CAROUSEL BUILDER AND PRINTER
+const slidePrinter = (slidesArr) => {
+    let domString = ''
+    for (let i = 0; i < slidesArr.length; i ++) {
+        const slide = slidesArr[i];
+        domString += `
+        <div class="carousel-item">
+            <img src="${slide.slideUrl}" alt="${slide.slideAlt}">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>${slide.heading}</h1>
+                <p>${slide.subHeader}</p>
+                <a class="btn btn-color" href="${slide.btnUrl}" role="button">&nbsp;&nbsp;&nbsp;${slide.btnText}&nbsp;&nbsp;&nbsp</a>
+            </div>
+      </div> 
+      `   
+    };
+   
+    printToDom(domString, 'homeCarousel');
+    document.getElementsByClassName("carousel-item")[0].className += " active";
+};
+
+//GEAR OBJECT ARRAY
 const gear = [
     {
         image: "https://image.spreadshirtmedia.com/image-server/v1/mp/products/T347A1MPA540PT17X22Y67D1008625786S65/views/1,width=378,height=378,appearanceId=1,backgroundColor=F2F2F2,modelId=2564,crop=list,version=1565757568,modelImageVersion=1551791379/bleach-womens-t-shirt.jpg",
@@ -205,8 +251,7 @@ const gear = [
     },
 ]
 
-// Create gear card printer function
-
+// GEAR CARD PRINTER
 const printGear = (gearArray) => { 
     let stringToPrint = '';
     for (let i = 0; i < gearArray.length; i++) {
@@ -230,8 +275,7 @@ const printGear = (gearArray) => {
     printToDom(stringToPrint, "gear-zone");
 }
 
-// Define concert data
-
+//CONCERT OBJECT ARRAY
 const concertDates = [
     {
         location: 'Royal Albert Hall, London',
@@ -270,8 +314,7 @@ const concertDates = [
     }
 ]
 
-// Create concert card printer function
-
+//PRINTS CONCERTS TO CONCERTS PAGE
 const printConcerts = (concertArray) => {
     let string = '';
     for (let i = 0; i < concertArray.length; i++) {
@@ -291,10 +334,11 @@ const printConcerts = (concertArray) => {
     printToDom(string, 'concert-list');
 }
 
-// Create init function
-
+//PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
 const init = () => {
-    if (document.URL.includes("music")) {
+    if (document.URL.includes("index")) {
+        slidePrinter(slides);
+    } esle if (document.URL.includes("music")) {
         albumCardPrinter(albums);
     } else if (document.URL.includes("gear")) {
         printGear(gear);
@@ -305,7 +349,6 @@ const init = () => {
     }
 }
 
-// Call init
-
+//CALL INIT
 init();
 
