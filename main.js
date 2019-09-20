@@ -221,7 +221,7 @@ const gear = [
     price: "$24.99",
     description:
       "100% cotton twill. 6 panel embroidered. Adjustable Hook and Loop closure. One size fits most.",
-    type: "Cap",
+    type: "cap",
     popular: true
   },
   {
@@ -330,6 +330,7 @@ const concertDates = [
   }
 ];
 
+
 //PRINTS CONCERTS TO CONCERTS PAGE
 const printConcerts = concertArray => {
   let string = "";
@@ -337,8 +338,9 @@ const printConcerts = concertArray => {
     const currentConcert = concertArray[i];
     string += `
             <div class="card">
-                <div class="card-body">
-                <h5 class="card-title">${currentConcert.location} | ${currentConcert.time}</h5>
+                <div class="card-body row">
+                <h5 class="card-title col-10 concert-listing">${currentConcert.location} | ${currentConcert.time}</h5>
+                <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
                 </div>
                 <a href="${currentConcert.mapUrl}">
                     <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
@@ -350,20 +352,41 @@ const printConcerts = concertArray => {
   printToDom(string, "concert-list");
 };
 
+const buttonClick = (e) => {
+    const name = e.target.id
+    if (name === "All") {
+        printGear(gear);
+        return;
+    }
+    const selectedGear = []
+    for (let i = 0; i < gear.length; i++) {
+        const merch = gear[i]
+        if (merch.type === name) {
+            selectedGear.push(merch);
+        }        
+    } printGear(selectedGear);
+} 
+
+
 //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
 const init = () => {
-  if (document.URL.includes("index")) {
-    slidePrinter(slides);
-  } else if (document.URL.includes("music")) {
-    albumCardPrinter(albums);
-  } else if (document.URL.includes("gear")) {
-    printGear(gear);
-  } else if (document.URL.includes("concerts")) {
-    printConcerts(concertDates);
-  } else {
-    console.log("bruh");
-  }
-};
+
+    if (document.URL.includes("index")) {
+        slidePrinter(slides);
+    } else if (document.URL.includes("music")) {
+        albumCardPrinter(albums);
+    } else if (document.URL.includes("gear")) {
+        document.getElementById('shirt').addEventListener('click', buttonClick)
+        document.getElementById('cap').addEventListener('click', buttonClick)
+        document.getElementById('misc').addEventListener('click', buttonClick)
+        document.getElementById('All').addEventListener('click', buttonClick)
+        printGear(gear);
+    } else if (document.URL.includes("concerts")){
+        printConcerts(concertDates);
+    } else {
+        console.log("bruh");
+    }
+}
 
 //CALL INIT
 init();

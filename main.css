@@ -104,7 +104,34 @@ footer {
 #merchCards {
     background-color: lightblue;
 }
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 1em;
+}
+
+#All {
+    background-color: rgb(94, 94, 172);
+}
+
+#shirt {
+    background-color: rgb(177, 82, 98);
+}
+
+#cap {
+    background-color: rgb(142, 236, 142);
+}
+
+#misc {
+    background-color: rgb(132, 153, 81);
+}
 /*Concerts Page*/
 #concert-list {
     margin-bottom: 2em;
+}
+
+.concert-listing {
+    margin-top: .3em;
 }
