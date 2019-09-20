@@ -218,7 +218,7 @@ const gear = [
         image: "https://s3.amazonaws.com/hatscolor/wp-content/uploads/2019/03/24124444/image-1-247x296.png",
         price: "$24.99",
         description: "100% cotton twill. 6 panel embroidered. Adjustable Hook and Loop closure. One size fits most.",
-        type: "Cap",
+        type: "cap",
         popular: true,
     },
     {
@@ -314,6 +314,7 @@ const concertDates = [
     }
 ]
 
+
 //PRINTS CONCERTS TO CONCERTS PAGE
 const printConcerts = (concertArray) => {
     let string = '';
@@ -334,14 +335,35 @@ const printConcerts = (concertArray) => {
     printToDom(string, 'concert-list');
 }
 
+const buttonClick = (e) => {
+    const name = e.target.id
+    if (name === "All") {
+        printGear(gear);
+        return;
+    }
+    const selectedGear = []
+    for (let i = 0; i < gear.length; i++) {
+        const merch = gear[i]
+        if (merch.type === name) {
+            selectedGear.push(merch);
+        }        
+    }
+}    
+
+
 //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
 const init = () => {
     if (document.URL.includes("index")) {
         slidePrinter(slides);
-    } esle if (document.URL.includes("music")) {
+    } else if (document.URL.includes("music")) {
         albumCardPrinter(albums);
     } else if (document.URL.includes("gear")) {
+        document.getElementById('shirt').addEventListener('click', buttonClick)
+        document.getElementById('cap').addEventListener('click', buttonClick)
+        document.getElementById('misc').addEventListener('click', buttonClick)
+        document.getElementById('All').addEventListener('click', buttonClick)
         printGear(gear);
+        printGear(selectedGear);
     } else if (document.URL.includes("concerts")){
         printConcerts(concertDates);
     } else {
