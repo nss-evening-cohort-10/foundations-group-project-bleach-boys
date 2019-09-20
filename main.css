@@ -44,7 +44,6 @@ nav{
 }
 /*Carousel*/
 .carousel{
-    height:400px;
     overflow:hidden;
 }
 .carousel-item img{
