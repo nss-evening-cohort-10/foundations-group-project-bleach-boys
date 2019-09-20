@@ -69,7 +69,33 @@ footer {
 .title {
     justify-content: center;
 }
-
+/*albums Page*/
+.album {
+    width: 500px;
+    border: 1.25px solid #ef3e24;
+  }
+  
+  .card-img {
+    height: 100%
+  }
+  
+  .card {
+    background-color: #146bb5;
+  }
+  
+  .card-text, .card-title {
+    color: #ffffff;
+  }
+  .card-title:hover {
+    color:#fad704
+  }  
+  
+  #album-zone {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+/*Gear Page*/
 #gear-zone {    
     display: flex;
     flex-flow: row wrap;
@@ -78,7 +104,7 @@ footer {
 #merchCards {
     background-color: lightblue;
 }
-
+/*Concerts Page*/
 #concert-list {
     margin-bottom: 2em;
 }
