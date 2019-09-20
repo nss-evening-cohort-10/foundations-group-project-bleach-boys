@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+/*the basics*/
 body{ 
     font-family: ‘Roboto’, sans-serif;
 }
@@ -15,9 +16,7 @@ h5,
 h6 {
     font-weight:700;
 }
-.navbar-default {
-    background-color: #146bb5; 
-}
+/*Navbar*/
 a.nav-link{
     color:#ffffff !important;
 }
@@ -37,7 +36,28 @@ nav{
     position:relative;
     background-color: #146bb5;
 }
-
+.btn-color{
+    background-color: #146bb5;
+}
+.btn-color:hover{
+    background-color:#fad704;
+}
+/*Carousel*/
+.carousel{
+    height:400px;
+    overflow:hidden;
+}
+.carousel-item img{
+    width:100%;
+    bottom: 0;
+}
+.carousel-caption {
+    top: 20%;
+}
+.carousel-caption > h1{
+    font-weight:400;
+}
+/*Footer*/
 footer {
     background-color: #146bb5;
 }
@@ -49,7 +69,33 @@ footer {
 .title {
     justify-content: center;
 }
-
+/*albums Page*/
+.album {
+    width: 500px;
+    border: 1.25px solid #ef3e24;
+  }
+  
+  .card-img {
+    height: 100%
+  }
+  
+  .card {
+    background-color: #146bb5;
+  }
+  
+  .card-text, .card-title {
+    color: #ffffff;
+  }
+  .card-title:hover {
+    color:#fad704
+  }  
+  
+  #album-zone {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+/*Gear Page*/
 #gear-zone {    
     display: flex;
     flex-flow: row wrap;
@@ -80,4 +126,8 @@ footer {
 
 #misc {
     background-color: rgb(132, 153, 81);
+}
+/*Concerts Page*/
+#concert-list {
+    margin-bottom: 2em;
 }
