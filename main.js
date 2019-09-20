@@ -321,15 +321,19 @@ const gear = [
       for (let i = 0; i < concertArray.length; i++) {
           const currentConcert = concertArray[i];
           string += `
-              <div class="concert-card card">
-                  <div class="card-body row">
-                  <h5 class="card-title col-10 concert-listing">${currentConcert.location} | ${currentConcert.time}</h5>
-                  <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
-                  </div>
-                  <a href="${currentConcert.mapUrl}">
-                      <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
-                  </a>
-              </div>
+            <div class="concert-card card">
+                <div class="card-body row" id="heading${i}">
+                    <h5 class="card-title col-10 concert-listing collapsed" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+                        ${currentConcert.location} | ${currentConcert.time}
+                    </h5>
+                    <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
+                </div>
+                <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#concert-list">
+                    <a href="${currentConcert.mapUrl}">
+                        <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
+                    </a>
+                </div>
+            </div>
           `
       }
       console.log(string);
@@ -365,7 +369,7 @@ const gear = [
           printGear(gear);
           printGear(selectedGear);
       } else if (document.URL.includes("concerts")){
-        //   printConcerts(concertDates);
+          printConcerts(concertDates);
       } else {
           console.log("bruh");
       }
