@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
-/*the basics*/
-body{ 
+/* the basics*/
+body { 
     font-family: ‘Roboto’, sans-serif;
 }
 
@@ -74,11 +74,11 @@ footer {
     border: 1.25px solid #ef3e24;
   }
   
-  .card-img {
+  /* .albums-card-img {
     height: 100%
-  }
+  } */
   
-  .card {
+  .albums-card {
     background-color: #146bb5;
   }
   
@@ -94,6 +94,8 @@ footer {
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
+
+
 /*Gear Page*/
 #gear-zone {    
     display: flex;
@@ -133,4 +135,8 @@ footer {
 
 .concert-listing {
     margin-top: .3em;
+}
+
+.concert-card {
+    background-color: #146bb5;
 }
