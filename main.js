@@ -322,9 +322,9 @@ const gear = [
           const currentConcert = concertArray[i];
           string += `
             <div class="concert-card card">
-                <div class="card-body row" id="heading${i}">
-                    <h5 id="listing${i}" class="card-title col-10 concert-listing collapsed" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
-                        ${currentConcert.location} | ${currentConcert.time}
+                <div class="card-body row collapsed" id="heading${i}" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+                    <h5 id="listing${i}" class="card-title col-10 concert-listing">
+                        ${currentConcert.time} | ${currentConcert.location}
                     </h5>
                     <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
                 </div>
