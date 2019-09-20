@@ -365,7 +365,7 @@ const gear = [
           printGear(gear);
           printGear(selectedGear);
       } else if (document.URL.includes("concerts")){
-          printConcerts(concertDates);
+        //   printConcerts(concertDates);
       } else {
           console.log("bruh");
       }

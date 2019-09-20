@@ -43,19 +43,85 @@
     </div>
 
     <div class="container">
-        <div id="concert-list">
-            <!-- <div class="card">
+        <div id="concert-list" class="accordion">
+
+            <div class="concert-card card">
                 <div class="card-body row">
-                <h5 class="card-title col-10">Royal Albert Hall, London | 6:37 pm</h5>
+                    <h5 class="card-title col-10 concert-listing" data-toggle="collapse" data-target="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                        
+                            Royal Albert Hall, London | 13th October 6:37 pm
+                        
+                    </h5>
+                    <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
+                </div>
+                <div id="collapse0" class="collapse show" aria-labelledby="headingOne" data-parent="#concert-list">
+                    <a href="https://maps.google.com">
+                        <img src="https://user-images.githubusercontent.com/54124593/65100281-8f577380-d98d-11e9-953c-5d975e375bad.png" class="card-img-top" alt="Map of Albert Hall">
+                    </a>
+                </div>
+            </div>
+            <div class="concert-card card">
+                <div class="card-body row">
+                <h5 class="card-title col-10 concert-listing">Level III, Swindon | 14th October 7:38 pm</h5>
                 <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
                 </div>
-                <a href="https://maps.google.com">
-                    <img src="https://user-images.githubusercontent.com/54124593/65100281-8f577380-d98d-11e9-953c-5d975e375bad.png" class="card-img-top" alt="Map of Albert Hall">
+                <a href="https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065">
+                    <img src="./images/level-iii-map.png" class="card-img-top" alt="Map of Level III, Swindon">
                 </a>
-            </div> -->
+            </div>
+
         </div>
     </div>
+    <!-- TEST -->
+    <div class="container">
 
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Collapsible Group Item #1
+                        </button>
+                    </h2>
+                </div>
+                
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Collapsible Group Item #2
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Collapsible Group Item #3
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          <!-- TEST -->
     <footer>
         <ul class="nav justify-content-center">
             <li class="nav-item">
