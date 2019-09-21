@@ -26,7 +26,10 @@ const Mark = document.getElementById("MarkInfo");
 const Rocket = document.getElementById("RocketInfo");
 const Matt = document.getElementById("MattInfo");
 
-
+//PRINT TO DOM
+const printToDom = (message, divID) => {
+  document.getElementById(divID).innerHTML = message;
+  };
 
 const bandMemberShow = (memberInfo) => {
     let stringDom = "";
@@ -76,11 +79,6 @@ const aboutEventListeners = () => {
         filter("Jon");
     } )
 }
-
-//PRINT TO DOM
-const printToDom = (message, divID) => {
-  document.getElementById(divID).innerHTML = message;
-  };
 
 //ALBUM OBJECT ARRAY
 const albums = [
@@ -347,7 +345,6 @@ const gear = [
                   </div>
               </div>
             </div>
-<<<<<<< HEAD
           </div>
         </div>
           `        
@@ -466,21 +463,24 @@ const gear = [
 //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
 const init = () => {
   if (document.title.includes("Home")) {
-      slidePrinter(slides);
-      printPopGear(gear);
+    slidePrinter(slides);
+    printPopGear(gear);
   } else if (document.URL.includes("music")) {
-      albumCardPrinter(albums);
+    albumCardPrinter(albums);
+  } else if (document.URL.includes("about")) {
+      aboutEventListeners();
   } else if (document.URL.includes("gear")) {
       document.getElementById('shirt').addEventListener('click', buttonClick)
       document.getElementById('cap').addEventListener('click', buttonClick)
       document.getElementById('misc').addEventListener('click', buttonClick)
       document.getElementById('All').addEventListener('click', buttonClick)
       printGear(gear);
-      printGear(selectedGear);
   } else if (document.URL.includes("concerts")){
       printConcerts(concertDates);
+  } else {
+      console.log("bruh");
+  }
 }
-};
 
 //CALL INIT
 init();
