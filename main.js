@@ -36,7 +36,7 @@ const bandMemberShow = (memberInfo) => {
     for (let i = 0; i < memberInfo.length; i++) {
         const oneBandMember = memberInfo[i];
         stringDom += `
-            <div class="soloInfo jumbotron text-center">
+            <div class="soloInfo container text-center">
                 <p>${oneBandMember.info}</p>
             </div>`
             printToDom(stringDom, "info")
