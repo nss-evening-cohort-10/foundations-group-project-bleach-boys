@@ -26,7 +26,10 @@ const Mark = document.getElementById("MarkInfo");
 const Rocket = document.getElementById("RocketInfo");
 const Matt = document.getElementById("MattInfo");
 
-
+//PRINT TO DOM
+const printToDom = (message, divID) => {
+  document.getElementById(divID).innerHTML = message;
+  };
 
 const bandMemberShow = (memberInfo) => {
     let stringDom = "";
@@ -76,11 +79,6 @@ const aboutEventListeners = () => {
         filter("Jon");
     } )
 }
-
-//PRINT TO DOM
-const printToDom = (message, divID) => {
-  document.getElementById(divID).innerHTML = message;
-  };
 
 //ALBUM OBJECT ARRAY
 const albums = [
@@ -242,7 +240,7 @@ const slides = [
     slideUrl: './images/bleachBoys_slider3.jpg',
     slideAlt: 'Dude. Dude. Dude. Dude.',
     heading: 'Bleach Boy Gear',
-    subHeader: 'Finally cloths you love so much you\'ll never wash or take off.',
+    subHeader: 'Finally clothes you love so much you\'ll never wash or take off.',
     btnUrl: './gear.html',
     btnText: 'GEAR UP!'
     }
@@ -393,7 +391,6 @@ const gear = [
       }
   ]
   
-  
   //PRINTS CONCERTS TO CONCERTS PAGE
   const printConcerts = (concertArray) => {
       let string = '';
@@ -437,28 +434,53 @@ const gear = [
           }        
       } printGear(selectedGear);
   } 
-  
-  //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
-  const init = () => {
-        if (document.URL.includes("index")) {
-            slidePrinter(slides);
-        } else if (document.URL.includes("music")) {
-          albumCardPrinter(albums);
-        } else if (document.URL.includes("about")) {
-            aboutEventListeners();
-        } else if (document.URL.includes("gear")) {
-            document.getElementById('shirt').addEventListener('click', buttonClick)
-            document.getElementById('cap').addEventListener('click', buttonClick)
-            document.getElementById('misc').addEventListener('click', buttonClick)
-            document.getElementById('All').addEventListener('click', buttonClick)
-            printGear(gear);
-            printGear(selectedGear);
-        } else if (document.URL.includes("concerts")){
-            printConcerts(concertDates);
-        } else {
-            console.log("bruh");
-        }
+  //PRINT POPULAR GEAR
+  const printPopGear = (gearArray) => { 
+    let stringToPrint = '';
+    for (let i = 0; i < gearArray.length; i++) {
+      const merch = gearArray[i];
+      if (merch.popular === true) {
+      stringToPrint += `
+      <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+              <img src="${merch.image}" class="card-img" id="imageCard" alt="image of ${merch.type}">
+          </div>
+          <div class="col-md-8">
+              <div class="card-body">
+                  <p class="card-text">${merch.description}</p>
+                  <p class="card-text">${merch.price}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      `        
+  } 
+}
+  printToDom(stringToPrint, "popGear");
+};
+
+//PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
+const init = () => {
+  if (document.title.includes("Home")) {
+    slidePrinter(slides);
+    printPopGear(gear);
+  } else if (document.URL.includes("music")) {
+    albumCardPrinter(albums);
+  } else if (document.URL.includes("about")) {
+      aboutEventListeners();
+  } else if (document.URL.includes("gear")) {
+      document.getElementById('shirt').addEventListener('click', buttonClick)
+      document.getElementById('cap').addEventListener('click', buttonClick)
+      document.getElementById('misc').addEventListener('click', buttonClick)
+      document.getElementById('All').addEventListener('click', buttonClick)
+      printGear(gear);
+  } else if (document.URL.includes("concerts")){
+      printConcerts(concertDates);
+  } else {
+      console.log("bruh");
   }
-  
-  //CALL INIT
-  init();
+}
+
+//CALL INIT
+init();
