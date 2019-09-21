@@ -394,28 +394,6 @@ const gear = [
       }
   ]
   
-  
-  //PRINTS CONCERTS TO CONCERTS PAGE
-  const printConcerts = (concertArray) => {
-      let string = '';
-      for (let i = 0; i < concertArray.length; i++) {
-          const currentConcert = concertArray[i];
-          string += `
-              <div class="concert-card card">
-                  <div class="card-body row">
-                  <h5 class="card-title col-10 concert-listing">${currentConcert.location} | ${currentConcert.time}</h5>
-                  <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
-                  </div>
-                  <a href="${currentConcert.mapUrl}">
-                      <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
-                  </a>
-              </div>
-          `
-      }
-      console.log(string);
-      printToDom(string, 'concert-list');
-  }
-  
   //PRINTS CONCERTS TO CONCERTS PAGE
   const printConcerts = (concertArray) => {
     let string = '';
