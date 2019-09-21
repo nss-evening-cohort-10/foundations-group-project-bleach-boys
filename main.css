@@ -69,16 +69,6 @@ footer {
 .title-center {
     justify-content: center;
 }
-/* About Page */
-.bandCards {
-    display: flex;
-}
-#aboutCard {
-    margin: 10px;
-}
-.aboutCardBody > img {
-    width: 100%;
-}
 
 /*albums Page*/
 .album {
@@ -106,6 +96,19 @@ footer {
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
+
+/* About Page */
+.bandCards {
+    display: flex;
+}
+.fuckingWork {
+    border: #ef3e24 4px solid;
+}
+.aboutCardBody > img {
+    width: 100%;
+    margin: 10px;
+}
+
 /*Gear Page*/
 #gear-zone {    
     display: flex;

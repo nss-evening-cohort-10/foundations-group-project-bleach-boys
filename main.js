@@ -26,9 +26,7 @@ const Mark = document.getElementById("MarkInfo");
 const Rocket = document.getElementById("RocketInfo");
 const Matt = document.getElementById("MattInfo");
 
-const printToDom = (toPrint, divId) => {
-    document.getElementById(divId).innerHTML = toPrint
-}
+
 
 const bandMemberShow = (memberInfo) => {
     let stringDom = "";
