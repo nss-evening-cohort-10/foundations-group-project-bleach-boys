@@ -64,37 +64,51 @@ footer {
     color: #ffffff;
     text-align: center;
 }
-.title {
+.title-center {
     justify-content: center;
     text-align: center;
 }
+
 /*albums Page*/
 .album {
     width: 500px;
     border: 1.25px solid #ef3e24;
-  }
-  
-  /* .albums-card-img {
-    height: 100%
-  } */
-  
-  .albums-card {
+}
+   
+.albums-card {
     background-color: #146bb5;
-  }
-  
-  .card-text, .card-title {
+}
+
+.card-text, .card-title {
     color: #ffffff;
-  }
-  .card-title:hover {
+}
+.card-title:hover {
     color:#fad704
-  }  
-  
-  #album-zone {
+}
+
+#album-header {
+    display: flex;
+    justify-content: center;
+}
+
+#album-zone {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-  }
+}
 
+/* About Page */
+.bandCards {
+    display: flex;
+}
+.fuckingWork {
+    border: #ef3e24 4px solid;
+    background-color: #146bb5;
+}
+.aboutCardBody > img {
+    width: 100%;
+    margin: 10px;
+}
 
 /*Gear Page*/
 #gear-zone {    
