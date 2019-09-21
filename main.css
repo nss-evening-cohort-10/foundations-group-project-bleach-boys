@@ -37,9 +37,11 @@ nav{
     background-color: #146bb5;
 }
 .btn-color{
+    color:#fad704 !important;
     background-color: #146bb5;
 }
 .btn-color:hover{
+    color:#ef3e24 !important;
     background-color:#fad704;
 }
 /*Carousel*/
@@ -67,6 +69,7 @@ footer {
 .title {
     justify-content: center;
     text-align: center;
+    margin-top:25px;
 }
 
 /*albums Page*/
@@ -74,11 +77,6 @@ footer {
     width: 500px;
     border: 1.25px solid #ef3e24;
 }
-   
-.albums-card {
-    background-color: #146bb5;
-}
-
 .card-text, .card-title {
     color: #ffffff;
 }
@@ -100,31 +98,29 @@ footer {
 /* About Page */
 .bandCards {
     display: flex;
-}
-.fuckingWork {
-    border: #ef3e24 4px solid;
-    background-color: #146bb5;
+    flex-direction: row;
+    justify-content: center;
 }
 .aboutCardBody > img {
     width: 100%;
-    margin: 10px;
 }
 
 /*Gear Page*/
 #gear-zone {    
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
-
-#merchCards {
-    background-color: lightblue;
+#popGear {    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
-
 #buttons {
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
-    margin: 1em;
+    margin-bottom: 2em;
 }
 #All {
     background-color: rgb(94, 94, 172);
@@ -145,11 +141,13 @@ footer {
 #concert-list {
     margin-bottom: 2em;
 }
-
 .concert-listing {
     margin-top: .3em;
 }
-
-.concert-card {
+.card {
     background-color: #146bb5;
-}
+    border: 1px solid #ef3e24;
+    border-radius: 5px;
+    padding:5px 2px;
+    margin: 10px 5px;
+    }
