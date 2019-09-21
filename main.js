@@ -356,7 +356,7 @@ const gear = [
         description: "Prepare to be astonished with the quality of our unisex zip-up hoodie. Comfortable, durable, and softer than other brand, this zip-up hoodie is a ringspun combed cotton and polyester combined. Ringspun combed cotton is no ordinary cotton which came from an extensive process of spinning, twisting, and thinning of the cotton strands.",
         type: "jacket",
         popular: false,
-    },
+    }
   ]
   
   // GEAR CARD PRINTER
@@ -466,6 +466,7 @@ const gear = [
           }        
       } printGear(selectedGear);
   } 
+
   //PRINT POPULAR GEAR
   const printPopGear = (gearArray) => { 
     let stringToPrint = '';
@@ -504,6 +505,7 @@ const init = () => {
   } else if (document.URL.includes("gear")) {
       document.getElementById('shirt').addEventListener('click', buttonClick)
       document.getElementById('cap').addEventListener('click', buttonClick)
+      document.getElementById('jacket').addEventListener('click', buttonClick)
       document.getElementById('misc').addEventListener('click', buttonClick)
       document.getElementById('All').addEventListener('click', buttonClick)
       printGear(gear);
