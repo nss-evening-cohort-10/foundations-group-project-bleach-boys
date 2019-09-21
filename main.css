@@ -60,13 +60,13 @@ nav{
 footer {
     background-color: #146bb5;
 }
-
 .copyright {
     color: #ffffff;
     text-align: center;
 }
 .title {
     justify-content: center;
+    text-align: center;
 }
 /*albums Page*/
 .album {
@@ -110,7 +110,6 @@ footer {
     justify-content: space-evenly;
     margin: 1em;
 }
-
 #All {
     background-color: rgb(94, 94, 172);
 }
