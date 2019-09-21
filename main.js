@@ -1,3 +1,4 @@
+//About cards
 const memberInfo = [
     {
         info: "When I was younger, I was obsessed with Pinky and the Brain. I even had a T-shirt collection. I also had one of those bowl haircuts, but I prefer to forget about that fact." , 
@@ -76,6 +77,15 @@ const aboutEventListeners = () => {
         filter("Jon");
     } )
 }
+
+//About newsletter
+let newsletterEmails = [];
+let inputEmailValue = document.getElementById("inputEmail").value;
+const emailButton = document.getElementById("newsletterSubmitButton");
+
+emailButton.addEventListener(`click` , function() {
+  
+} )
 
 //PRINT TO DOM
 const printToDom = (message, divID) => {
