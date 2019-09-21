@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
-/*the basics*/
-body{ 
+/* the basics*/
+body { 
     font-family: ‘Roboto’, sans-serif;
 }
 
@@ -44,7 +44,6 @@ nav{
 }
 /*Carousel*/
 .carousel{
-    height:400px;
     overflow:hidden;
 }
 .carousel-item img{
@@ -76,11 +75,11 @@ footer {
     border: 1.25px solid #ef3e24;
   }
   
-  .card-img {
+  /* .albums-card-img {
     height: 100%
-  }
+  } */
   
-  .card {
+  .albums-card {
     background-color: #146bb5;
   }
   
@@ -148,4 +147,8 @@ footer {
 
 .concert-listing {
     margin-top: .3em;
+}
+
+.concert-card {
+    background-color: #146bb5;
 }

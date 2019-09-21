@@ -80,7 +80,7 @@ const aboutEventListeners = () => {
 //PRINT TO DOM
 const printToDom = (message, divID) => {
   document.getElementById(divID).innerHTML = message;
-};
+  };
 
 //ALBUM OBJECT ARRAY
 const albums = [
@@ -99,7 +99,7 @@ const albums = [
       "Ode To Clorox",
       "Go Bleach Yourself"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -116,7 +116,7 @@ const albums = [
       "Eye Damage",
       "Blinded By The Bleach"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -133,7 +133,7 @@ const albums = [
       "Claude Louis Berthollet",
       "Eau De Javel"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -150,7 +150,7 @@ const albums = [
       "Thirsty For Bleach",
       "Esophagus Damage"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -167,7 +167,7 @@ const albums = [
       "Sitting On the Bleachers",
       "Shouldn't Drink Bleach But I Do"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
   {
     coverUrl:
@@ -184,7 +184,7 @@ const albums = [
       "Bleach Your Brain",
       "Bleach On Down To Bleach Town"
     ],
-    albumUrl: "bandcamp.com"
+    albumUrl: "https://bandcamp.com"
   },
 ];
 
@@ -192,7 +192,7 @@ const albums = [
 const albumCardPrinter = arr => {
   let htmlString = "";
   for (i = 0; i < arr.length; i++) {
-    htmlString += `<div class="card mb-3 album">
+    htmlString += `<div class=" album card mb-3 albums-card">
       <div class="row no-gutters">
         <div class="col-md-6">
           <img src="${arr[i].coverUrl}" class="card-img" alt="${arr[i].title}">
@@ -327,24 +327,25 @@ const gear = [
         type: "jacket",
         popular: false,
     },
-]
-
-// GEAR CARD PRINTER
-const printGear = (gearArray) => { 
-    let stringToPrint = '';
-    for (let i = 0; i < gearArray.length; i++) {
-        const merch = gearArray[i]
-        stringToPrint += `
-        <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="${merch.image}" class="card-img" id="imageCard" alt="image of ${merch.type}">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <p class="card-text">${merch.description}</p>
-                    <p class="card-text">${merch.price}</p>
-                </div>
+  ]
+  
+  // GEAR CARD PRINTER
+  const printGear = (gearArray) => { 
+      let stringToPrint = '';
+      for (let i = 0; i < gearArray.length; i++) {
+          const merch = gearArray[i]
+          stringToPrint += `
+          <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                  <img src="${merch.image}" class="card-img" id="imageCard" alt="image of ${merch.type}">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <p class="card-text">${merch.description}</p>
+                      <p class="card-text">${merch.price}</p>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
