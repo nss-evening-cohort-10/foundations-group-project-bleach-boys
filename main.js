@@ -349,111 +349,116 @@ const gear = [
             </div>
           </div>
         </div>
-        `        
-    } 
-    printToDom(stringToPrint, "gear-zone");
-}
-
-//CONCERT OBJECT ARRAY
-const concertDates = [
-    {
-        location: 'Royal Albert Hall, London',
-        time: '13th October 6:37 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/albert-hall-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Royal+Albert+Hall/@51.5009088,-0.1795547,17z/data=!3m1!4b1!4m5!3m4!1s0x4876055b21867ad1:0x5efe9cee35da2fd9!8m2!3d51.5009088!4d-0.177366'
-    },
-    {
-        location: 'Level III, Swindon',
-        time: '14th October 7:38 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/level-iii-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065'
-    },
-    {
-        location: 'Sydney Opera House, Sydney',
-        time: '15th October 9:21 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/sydney-opera-house-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Sydney+Opera+House/@-33.8567844,151.213108,17z/data=!3m2!4b1!5s0x6b12ae67d234a27f:0xd6d4e9380ca1e32f!4m5!3m4!1s0x6b12ae665e892fdd:0x3133f8d75a1ac251!8m2!3d-33.8567844!4d151.2152967'
-    },
-    {
-        location: 'Bridgestone Arena, Nashville',
-        time: '16th October 8:14 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/bridgestone-arena-map.png',
-        mapUrl: 'https://www.google.com/maps/place/Bridgestone+Arena/@36.1591736,-86.7806846,17z/data=!3m1!4b1!4m5!3m4!1s0x8864665ec38d6447:0xa900537ecd3f6612!8m2!3d36.1591736!4d-86.7784959'
-    },
-    {
-        location: 'The Basement East, Nashville',
-        time: '17th October 10:28 pm',
-        ticketUrl: 'ticketmaster.com',
-        imgUrl: './images/basement-east-map.png',
-        mapUrl: 'https://www.google.com/maps/place/The+Basement+East/@36.175686,-86.7577787,17z/data=!3m1!4b1!4m5!3m4!1s0x886466334bb7caed:0x7d32d7f9cf5cac87!8m2!3d36.175686!4d-86.75559'
-    }
-]
-
-
-//PRINTS CONCERTS TO CONCERTS PAGE
-const printConcerts = (concertArray) => {
-    let string = '';
-    for (let i = 0; i < concertArray.length; i++) {
-        const currentConcert = concertArray[i];
-        string += `
-            <div class="card">
-                <div class="card-body row">
-                <h5 class="card-title col-10 concert-listing">${currentConcert.location} | ${currentConcert.time}</h5>
-                <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
+          `        
+      } 
+      printToDom(stringToPrint, "gear-zone");
+  }
+  
+  //CONCERT OBJECT ARRAY
+  const concertDates = [
+      {
+          location: 'Royal Albert Hall, London',
+          time: '13th October 6:37 pm',
+          ticketUrl: 'ticketmaster.com',
+          imgUrl: './images/albert-hall-map.png',
+          mapUrl: 'https://www.google.com/maps/place/Royal+Albert+Hall/@51.5009088,-0.1795547,17z/data=!3m1!4b1!4m5!3m4!1s0x4876055b21867ad1:0x5efe9cee35da2fd9!8m2!3d51.5009088!4d-0.177366'
+      },
+      {
+          location: 'Level III, Swindon',
+          time: '14th October 7:38 pm',
+          ticketUrl: 'ticketmaster.com',
+          imgUrl: './images/level-iii-map.png',
+          mapUrl: 'https://www.google.com/maps/place/Level+III/@51.559248,-1.7902537,17z/data=!3m1!4b1!4m5!3m4!1s0x4871444402a67b47:0xaf041daaa5d9a8df!8m2!3d51.559248!4d-1.788065'
+      },
+      {
+          location: 'Sydney Opera House, Sydney',
+          time: '15th October 9:21 pm',
+          ticketUrl: 'ticketmaster.com',
+          imgUrl: './images/sydney-opera-house-map.png',
+          mapUrl: 'https://www.google.com/maps/place/Sydney+Opera+House/@-33.8567844,151.213108,17z/data=!3m2!4b1!5s0x6b12ae67d234a27f:0xd6d4e9380ca1e32f!4m5!3m4!1s0x6b12ae665e892fdd:0x3133f8d75a1ac251!8m2!3d-33.8567844!4d151.2152967'
+      },
+      {
+          location: 'Bridgestone Arena, Nashville',
+          time: '16th October 8:14 pm',
+          ticketUrl: 'ticketmaster.com',
+          imgUrl: './images/bridgestone-arena-map.png',
+          mapUrl: 'https://www.google.com/maps/place/Bridgestone+Arena/@36.1591736,-86.7806846,17z/data=!3m1!4b1!4m5!3m4!1s0x8864665ec38d6447:0xa900537ecd3f6612!8m2!3d36.1591736!4d-86.7784959'
+      },
+      {
+          location: 'The Basement East, Nashville',
+          time: '17th October 10:28 pm',
+          ticketUrl: 'ticketmaster.com',
+          imgUrl: './images/basement-east-map.png',
+          mapUrl: 'https://www.google.com/maps/place/The+Basement+East/@36.175686,-86.7577787,17z/data=!3m1!4b1!4m5!3m4!1s0x886466334bb7caed:0x7d32d7f9cf5cac87!8m2!3d36.175686!4d-86.75559'
+      }
+  ]
+  
+  
+  //PRINTS CONCERTS TO CONCERTS PAGE
+  const printConcerts = (concertArray) => {
+      let string = '';
+      for (let i = 0; i < concertArray.length; i++) {
+          const currentConcert = concertArray[i];
+          string += `
+            <div class="concert-card card">
+                <div class="card-body row collapsed" id="heading${i}" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+                    <h5 id="listing${i}" class="card-title col-10 concert-listing">
+                        ${currentConcert.time} | ${currentConcert.location}
+                    </h5>
+                    <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
                 </div>
-                <a href="${currentConcert.mapUrl}">
-                    <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
-                </a>
+                <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#concert-list">
+                    <a href="${currentConcert.mapUrl}">
+                        <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
+                    </a>
+                </div>
             </div>
-        `
-    }
-    console.log(string);
-    printToDom(string, 'concert-list');
-}
-
-const buttonClick = (e) => {
-    const name = e.target.id
-    if (name === "All") {
-        printGear(gear);
-        return;
-    }
-    const selectedGear = []
-    for (let i = 0; i < gear.length; i++) {
-        const merch = gear[i]
-        if (merch.type === name) {
-            selectedGear.push(merch);
-        }        
-    }
-}    
-
-
-//PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
-const init = () => {
-    if (document.URL.includes("index")) {
-        slidePrinter(slides);
-    } else if (document.URL.includes("music")) {
-        albumCardPrinter(albums);
-    } else if (document.URL.includes("gear")) {
-        document.getElementById('shirt').addEventListener('click', buttonClick)
-        document.getElementById('cap').addEventListener('click', buttonClick)
-        document.getElementById('misc').addEventListener('click', buttonClick)
-        document.getElementById('All').addEventListener('click', buttonClick)
-        printGear(gear);
-        printGear(selectedGear);
-    } else if (document.URL.includes("concerts")){
-        printConcerts(concertDates);
-    } else if (document.URL.includes("about")) {
-        aboutEventListeners();
-    }else {
-        console.log("bruh");
-    }
-}
-
-//CALL INIT
-init();
-
-
+          `
+      }
+      printToDom(string, 'concert-list');
+      const firstListing = document.getElementById('listing0');
+      firstListing.className = 'card-title col-10 concert-listing';
+      firstListing.setAttribute('aria-expanded', 'true');
+      const firstMap = document.getElementById('collapse0');
+      firstMap.className += ' show';
+  }
+  
+  const buttonClick = (e) => {
+      const name = e.target.id
+      if (name === "All") {
+          printGear(gear);
+          return;
+      }  
+      const selectedGear = []
+      for (let i = 0; i < gear.length; i++) {
+          const merch = gear[i]
+          if (merch.type === name) {
+              selectedGear.push(merch);
+          }        
+      } printGear(selectedGear);
+  } 
+  
+  //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
+  const init = () => {
+        if (document.URL.includes("index")) {
+            slidePrinter(slides);
+        } else if (document.URL.includes("music")) {
+          albumCardPrinter(albums);
+        } else if (document.URL.includes("about")) {
+            aboutEventListeners();
+        } else if (document.URL.includes("gear")) {
+            document.getElementById('shirt').addEventListener('click', buttonClick)
+            document.getElementById('cap').addEventListener('click', buttonClick)
+            document.getElementById('misc').addEventListener('click', buttonClick)
+            document.getElementById('All').addEventListener('click', buttonClick)
+            printGear(gear);
+            printGear(selectedGear);
+        } else if (document.URL.includes("concerts")){
+            printConcerts(concertDates);
+        } else {
+            console.log("bruh");
+        }
+  }
+  
+  //CALL INIT
+  init();
