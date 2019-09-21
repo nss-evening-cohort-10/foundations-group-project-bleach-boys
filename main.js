@@ -1,3 +1,81 @@
+const memberInfo = [
+    {
+        info: "When I was younger, I was obsessed with Pinky and the Brain. I even had a T-shirt collection. I also had one of those bowl haircuts, but I prefer to forget about that fact." , 
+        name: "Matt"
+    },
+    {
+        info: "When I was younger, I wanted to be an archaeologist because of Indiana Jones." , 
+        name: "Rocket", 
+    },
+    {
+        info: "I got really bad food poisoning when I was in Costa Rica. It was so bad that I had to be hospitalized for three days and put on a morphine drip.", 
+        name: "Mark",
+    },
+    {
+        info: "I went to college to be a high school history teacher. I’m still technically certified to teach high school history.", 
+        name: "Phnuff",
+    },
+    {
+        info: "I don’t play any sports nor know anything about them. I couldn’t think of anything more boring than going to a sporting event. In fact, I once fell asleep at a hockey match.",
+        name: "Jon"
+    }
+]
+const Jon = document.getElementById("JonInfo");
+const Phnuff = document.getElementById("PhnuffInfo");
+const Mark = document.getElementById("MarkInfo");
+const Rocket = document.getElementById("RocketInfo");
+const Matt = document.getElementById("MattInfo");
+
+
+
+const bandMemberShow = (memberInfo) => {
+    let stringDom = "";
+    for (let i = 0; i < memberInfo.length; i++) {
+        const oneBandMember = memberInfo[i];
+        stringDom += `
+            <div class="soloInfo jumbotron text-center">
+                <p>${oneBandMember.info}</p>
+            </div>`
+            printToDom(stringDom, "info")
+    }
+}
+
+const clearScreen = () => {
+    document.getElementById("info").innerHTML = "";
+}
+const filter = (filteredMember) => {
+    bandMemberShow(memberInfo.filter(function(member) {
+        return member.name === filteredMember;
+    }));
+}
+
+
+const aboutEventListeners = () => {
+    Matt.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Matt");
+    } )
+
+    Rocket.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Rocket");
+    } )
+
+    Mark.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Mark");
+    } )
+
+    Phnuff.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Phnuff");
+    } )
+
+    Jon.addEventListener(`click`, function() {
+        clearScreen();
+        filter("Jon");
+    } )
+}
 
 //PRINT TO DOM
 const printToDom = (message, divID) => {
@@ -270,6 +348,7 @@ const gear = [
               </div>
             </div>
           </div>
+        </div>
           `        
       } 
       printToDom(stringToPrint, "gear-zone");
@@ -361,22 +440,24 @@ const gear = [
   
   //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
   const init = () => {
-      if (document.URL.includes("index")) {
-          slidePrinter(slides);
-      } else if (document.URL.includes("music")) {
+        if (document.URL.includes("index")) {
+            slidePrinter(slides);
+        } else if (document.URL.includes("music")) {
           albumCardPrinter(albums);
-      } else if (document.URL.includes("gear")) {
-          document.getElementById('shirt').addEventListener('click', buttonClick)
-          document.getElementById('cap').addEventListener('click', buttonClick)
-          document.getElementById('misc').addEventListener('click', buttonClick)
-          document.getElementById('All').addEventListener('click', buttonClick)
-          printGear(gear);
-          printGear(selectedGear);
-      } else if (document.URL.includes("concerts")){
-          printConcerts(concertDates);
-      } else {
-          console.log("bruh");
-      }
+        } else if (document.URL.includes("about")) {
+            aboutEventListeners();
+        } else if (document.URL.includes("gear")) {
+            document.getElementById('shirt').addEventListener('click', buttonClick)
+            document.getElementById('cap').addEventListener('click', buttonClick)
+            document.getElementById('misc').addEventListener('click', buttonClick)
+            document.getElementById('All').addEventListener('click', buttonClick)
+            printGear(gear);
+            printGear(selectedGear);
+        } else if (document.URL.includes("concerts")){
+            printConcerts(concertDates);
+        } else {
+            console.log("bruh");
+        }
   }
   
   //CALL INIT
