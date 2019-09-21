@@ -65,9 +65,10 @@ footer {
     color: #ffffff;
     text-align: center;
 }
-.title {
+.title-center {
     justify-content: center;
 }
+
 /*albums Page*/
 .album {
     width: 500px;
@@ -96,6 +97,18 @@ footer {
     justify-content: space-evenly;
 }
 
+/* About Page */
+.bandCards {
+    display: flex;
+}
+.fuckingWork {
+    border: #ef3e24 4px solid;
+    background-color: #146bb5;
+}
+.aboutCardBody > img {
+    width: 100%;
+    margin: 10px;
+}
 
 /*Gear Page*/
 #gear-zone {    
