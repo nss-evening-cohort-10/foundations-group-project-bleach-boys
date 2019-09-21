@@ -269,6 +269,7 @@ const gear = [
                   </div>
               </div>
             </div>
+<<<<<<< HEAD
           </div>
           `        
       } 
@@ -336,6 +337,35 @@ const gear = [
       printToDom(string, 'concert-list');
   }
   
+  //PRINTS CONCERTS TO CONCERTS PAGE
+  const printConcerts = (concertArray) => {
+    let string = '';
+    for (let i = 0; i < concertArray.length; i++) {
+        const currentConcert = concertArray[i];
+        string += `
+          <div class="concert-card card">
+              <div class="card-body row collapsed" id="heading${i}" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+                  <h5 id="listing${i}" class="card-title col-10 concert-listing">
+                      ${currentConcert.time} | ${currentConcert.location}
+                  </h5>
+                  <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
+              </div>
+              <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#concert-list">
+                  <a href="${currentConcert.mapUrl}">
+                      <img src="${currentConcert.imgUrl}" class="card-img-top" alt="Map of ${currentConcert.location}">
+                  </a>
+              </div>
+          </div>
+        `
+    }
+    printToDom(string, 'concert-list');
+    const firstListing = document.getElementById('listing0');
+    firstListing.className = 'card-title col-10 concert-listing';
+    firstListing.setAttribute('aria-expanded', 'true');
+    const firstMap = document.getElementById('collapse0');
+    firstMap.className += ' show';
+}
+
   const buttonClick = (e) => {
       const name = e.target.id
       if (name === "All") {
