@@ -79,38 +79,38 @@ const aboutEventListeners = () => {
         clearScreen();
         filter("Jon");
     } )
-}
+    //About newsletter
+    let newsletterEmails = [];
+    const emailButton = document.getElementById("newsletterSubmitButton");
 
-//About newsletter
-let newsletterEmails = [];
-const emailButton = document.getElementById("newsletterSubmitButton");
-
-const yesChecked = () => {
-  let modalDom = ``;
-  modalDom = `Your email of ${newsletterEmails[newsletterEmails.length-1]} was accepted! Selling it to facebook now!`
-  return modalDom;
-}
-const noChecked = () => {
-  let modalDom = ``;
-  modalDom = `You need to click the checkbox for us to accept your email.`;
-  return modalDom;
-}
-
-emailButton.addEventListener(`click` , function() {
-  if(document.getElementById("newsletterCheckbox").checked) {
-    if(document.getElementById("inputEmail1").value) {
-      let email = [document.getElementById("inputEmail1").value];
-      newsletterEmails.push(email);
-      document.getElementById("inputEmail1").value = "";
-      printToDom(yesChecked(), "modalInfo");
+    const yesChecked = () => {
+      let modalDom = ``;
+      modalDom = `Your email of ${newsletterEmails[newsletterEmails.length-1]} was accepted! Selling it to facebook now!`
+      return modalDom;
     }
-  } else {
-    if(document.getElementById("inputEmail1").value) {
-      document.getElementById("inputEmail1").value = "";
-      printToDom(noChecked(), "modalInfo");
+    const noChecked = () => {
+      let modalDom = ``;
+      modalDom = `You need to click the checkbox for us to accept your email.`;
+      return modalDom;
     }
-  }
-} )
+
+    emailButton.addEventListener(`click` , function() {
+      if(document.getElementById("newsletterCheckbox").checked) {
+        if(document.getElementById("inputEmail1").value) {
+          let email = [document.getElementById("inputEmail1").value];
+          newsletterEmails.push(email);
+          document.getElementById("inputEmail1").value = "";
+          printToDom(yesChecked(), "modalInfo");
+        }
+      } else {
+        if(document.getElementById("inputEmail1").value) {
+          document.getElementById("inputEmail1").value = "";
+          printToDom(noChecked(), "modalInfo");
+        }
+      }
+    } )
+
+}
 
 //ALBUM OBJECT ARRAY
 const albums = [
@@ -501,6 +501,7 @@ const init = () => {
   } else if (document.URL.includes("music")) {
     albumCardPrinter(albums);
   } else if (document.URL.includes("about")) {
+
       aboutEventListeners();
   } else if (document.URL.includes("gear")) {
       document.getElementById('shirt').addEventListener('click', buttonClick)
