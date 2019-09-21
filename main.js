@@ -1,3 +1,8 @@
+//PRINT TO DOM
+const printToDom = (message, divID) => {
+  document.getElementById(divID).innerHTML = message;
+  };
+
 //About cards
 const memberInfo = [
     {
@@ -26,8 +31,6 @@ const Phnuff = document.getElementById("PhnuffInfo");
 const Mark = document.getElementById("MarkInfo");
 const Rocket = document.getElementById("RocketInfo");
 const Matt = document.getElementById("MattInfo");
-
-
 
 const bandMemberShow = (memberInfo) => {
     let stringDom = "";
@@ -80,17 +83,34 @@ const aboutEventListeners = () => {
 
 //About newsletter
 let newsletterEmails = [];
-let inputEmailValue = document.getElementById("inputEmail").value;
 const emailButton = document.getElementById("newsletterSubmitButton");
 
-emailButton.addEventListener(`click` , function() {
-  
-} )
+const yesChecked = () => {
+  let modalDom = ``;
+  modalDom = `Your email of ${newsletterEmails[newsletterEmails.length-1]} was accepted! Selling it to facebook now!`
+  return modalDom;
+}
+const noChecked = () => {
+  let modalDom = ``;
+  modalDom = `You need to click the checkbox for us to accept your email.`;
+  return modalDom;
+}
 
-//PRINT TO DOM
-const printToDom = (message, divID) => {
-  document.getElementById(divID).innerHTML = message;
-  };
+emailButton.addEventListener(`click` , function() {
+  if(document.getElementById("newsletterCheckbox").checked) {
+    if(document.getElementById("inputEmail1").value) {
+      let email = [document.getElementById("inputEmail1").value];
+      newsletterEmails.push(email);
+      document.getElementById("inputEmail1").value = "";
+      printToDom(yesChecked(), "modalInfo");
+    }
+  } else {
+    if(document.getElementById("inputEmail1").value) {
+      document.getElementById("inputEmail1").value = "";
+      printToDom(noChecked(), "modalInfo");
+    }
+  }
+} )
 
 //ALBUM OBJECT ARRAY
 const albums = [
@@ -252,7 +272,7 @@ const slides = [
     slideUrl: './images/bleachBoys_slider3.jpg',
     slideAlt: 'Dude. Dude. Dude. Dude.',
     heading: 'Bleach Boy Gear',
-    subHeader: 'Finally cloths you love so much you\'ll never wash or take off.',
+    subHeader: 'Finally clothes you love so much you\'ll never wash or take off.',
     btnUrl: './gear.html',
     btnText: 'GEAR UP!'
     }
@@ -403,7 +423,6 @@ const gear = [
       }
   ]
   
-  
   //PRINTS CONCERTS TO CONCERTS PAGE
   const printConcerts = (concertArray) => {
       let string = '';
@@ -411,11 +430,11 @@ const gear = [
           const currentConcert = concertArray[i];
           string += `
             <div class="concert-card card">
-                <div class="card-body row collapsed" id="heading${i}" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
-                    <h5 id="listing${i}" class="card-title col-10 concert-listing">
+                <div class="card-body row" id="heading${i}">
+                    <h5 id="listing${i}" class="card-title col-10 concert-listing collapsed" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
                         ${currentConcert.time} | ${currentConcert.location}
                     </h5>
-                    <a class="btn btn-color col" href="https://www.ticketmaster.com/" role="button">Get Tickets</a>
+                    <a class="btn btn-color col" href="https://www.ticketmaster.com/" target="_blank" role="button">Get Tickets</a>
                 </div>
                 <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#concert-list">
                     <a href="${currentConcert.mapUrl}">
@@ -447,28 +466,53 @@ const gear = [
           }        
       } printGear(selectedGear);
   } 
-  
-  //PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
-  const init = () => {
-        if (document.URL.includes("index")) {
-            slidePrinter(slides);
-        } else if (document.URL.includes("music")) {
-          albumCardPrinter(albums);
-        } else if (document.URL.includes("about")) {
-            aboutEventListeners();
-        } else if (document.URL.includes("gear")) {
-            document.getElementById('shirt').addEventListener('click', buttonClick)
-            document.getElementById('cap').addEventListener('click', buttonClick)
-            document.getElementById('misc').addEventListener('click', buttonClick)
-            document.getElementById('All').addEventListener('click', buttonClick)
-            printGear(gear);
-            printGear(selectedGear);
-        } else if (document.URL.includes("concerts")){
-            printConcerts(concertDates);
-        } else {
-            console.log("bruh");
-        }
+  //PRINT POPULAR GEAR
+  const printPopGear = (gearArray) => { 
+    let stringToPrint = '';
+    for (let i = 0; i < gearArray.length; i++) {
+      const merch = gearArray[i];
+      if (merch.popular === true) {
+      stringToPrint += `
+      <div class="container card mb-3" id="merchCards" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+              <img src="${merch.image}" class="card-img" id="imageCard" alt="image of ${merch.type}">
+          </div>
+          <div class="col-md-8">
+              <div class="card-body">
+                  <p class="card-text">${merch.description}</p>
+                  <p class="card-text">${merch.price}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      `        
+  } 
+}
+  printToDom(stringToPrint, "popGear");
+};
+
+//PRINT ALL FUNCTIONS TO THEIR RESPECTIVE PAGES
+const init = () => {
+  if (document.title.includes("Home")) {
+    slidePrinter(slides);
+    printPopGear(gear);
+  } else if (document.URL.includes("music")) {
+    albumCardPrinter(albums);
+  } else if (document.URL.includes("about")) {
+      aboutEventListeners();
+  } else if (document.URL.includes("gear")) {
+      document.getElementById('shirt').addEventListener('click', buttonClick)
+      document.getElementById('cap').addEventListener('click', buttonClick)
+      document.getElementById('misc').addEventListener('click', buttonClick)
+      document.getElementById('All').addEventListener('click', buttonClick)
+      printGear(gear);
+  } else if (document.URL.includes("concerts")){
+      printConcerts(concertDates);
+  } else {
+      console.log("bruh");
   }
-  
-  //CALL INIT
-  init();
+}
+
+//CALL INIT
+init();
